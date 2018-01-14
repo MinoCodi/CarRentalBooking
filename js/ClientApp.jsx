@@ -1,24 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Calendar from "../public/Components/Calendar";
-const App = () => {
-  return (
+import { HashRouter, Route, Router } from "react-router-dom";
+import Calendar from "./Components/Calendar";
+import Landing from "./Components/Landing";
+
+const App = () => (
+  <HashRouter>
     <div className="app">
-      <div className="landing">
-        <h1>Car rental</h1>
-        <div>
-          Выберете город:
-          <select>
-            <option>Минск</option>
-            <option>Борисов</option>
-          </select>
-        </div>
-        <Calendar />
-        {/* <input type="text" placeholder="Search" />  */}
-        {/* <a> Перейти к списку </a> */}
-      </div>
+      <Route exact path="/" component={Landing} />
     </div>
-  );
-};
+  </HashRouter>
+);
 
 ReactDOM.render(<App />, document.getElementById("root"));
