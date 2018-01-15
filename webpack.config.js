@@ -14,7 +14,8 @@ module.exports = {
   devServer: {
     publicPath: "/public/",
     host: "localhost",
-    port: 8080
+    port: 8080,
+    historyApiFallback: true
   },
   stats: {
     colors: true,

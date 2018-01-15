@@ -1,15 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter, Route, Router } from "react-router-dom";
-import Calendar from "./Components/Calendar";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Landing from "./Components/Landing";
+import Search from "./Components/Search";
 
+const four0four = () => <h1>404</h1>;
 const App = () => (
-  <HashRouter>
+  <BrowserRouter>
     <div className="app">
-      <Route exact path="/" component={Landing} />
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route path="/search" component={Search} />
+        <Route component={four0four} />
+      </Switch>
     </div>
-  </HashRouter>
+  </BrowserRouter>
 );
 
 ReactDOM.render(<App />, document.getElementById("root"));

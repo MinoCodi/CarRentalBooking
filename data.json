@@ -1,0 +1,37 @@
+{
+  "cars": [
+    {
+      "manufacturer": "bmw",
+      "model": "e46",
+      "color": "red",
+      "body": "coupe",
+      "engine": "3L",
+      "maxSpeed": "250km/h",
+      "production": "2002",
+      "transmission": "automatic",
+      "poster": "bmw.jpg"
+    },
+    {
+      "manufacturer": "honda",
+      "model": "fd1",
+      "color": "green",
+      "body": "hatchback",
+      "engine": "1,7L",
+      "maxSpeed": "250km/h",
+      "production": "2005",
+      "transmission": "manual",
+      "poster": "honda.jpg"
+    },
+    {
+      "manufacturer": "skoda",
+      "model": "",
+      "color": "black",
+      "body": "sedan",
+      "engine": "1,6L",
+      "maxSpeed": "250km/h",
+      "production": "2017",
+      "transmission": "automatic",
+      "poster": "skoda.jpg"
+    }
+  ]
+}
