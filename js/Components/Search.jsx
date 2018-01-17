@@ -19,11 +19,7 @@ const Search = () => {
     return (
       <div className="search">
         <Header />
-        <div>
-          {data.cars.map(cars => (
-            <ShowCard key={cars.manufacturer} {...cars} />
-          ))}
-        </div>
+        <div>{data.cars.map(cars => <ShowCard key={cars.ID} {...cars} />)}</div>
       </div>
     );
   }

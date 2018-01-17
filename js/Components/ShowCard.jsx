@@ -20,10 +20,12 @@ const Image = styled.img`
 
 const ShowCard = props => (
   <Wrapper>
-    <Image
-      alt={`${props.manufacturer}actual picture`}
-      src={`../../public/img/${props.poster}`}
-    />
+    <Link to={`details/${props.ID}`}>
+      <Image
+        alt={`${props.manufacturer}actual picture`}
+        src={`../../public/img/${props.poster}`}
+      />
+    </Link>
     <div>
       <h3>{props.manufacturer.toUpperCase()}</h3>
       <h4>{props.model}</h4>
