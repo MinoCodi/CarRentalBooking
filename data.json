@@ -9,7 +9,8 @@
       "maxSpeed": "250km/h",
       "production": "2002",
       "transmission": "automatic",
-      "poster": "bmw.jpg"
+      "poster": "bmw.jpg",
+      "ID": "1"
     },
     {
       "manufacturer": "honda",
@@ -20,7 +21,8 @@
       "maxSpeed": "250km/h",
       "production": "2005",
       "transmission": "manual",
-      "poster": "honda.jpg"
+      "poster": "honda.jpg",
+      "ID": "2"
     },
     {
       "manufacturer": "skoda",
@@ -31,7 +33,80 @@
       "maxSpeed": "250km/h",
       "production": "2017",
       "transmission": "automatic",
-      "poster": "skoda.jpg"
+      "poster": "skoda.jpg",
+      "ID": "3"
+    },
+    {
+      "manufacturer": "opel",
+      "model": "e46",
+      "color": "red",
+      "body": "coupe",
+      "engine": "3L",
+      "maxSpeed": "250km/h",
+      "production": "2002",
+      "transmission": "automatic",
+      "poster": "opel.jpg",
+      "ID": "4"
+    },
+    {
+      "manufacturer": "volkswagen",
+      "model": "fd1",
+      "color": "green",
+      "body": "hatchback",
+      "engine": "1,7L",
+      "maxSpeed": "250km/h",
+      "production": "2005",
+      "transmission": "manual",
+      "poster": "vw.jpg",
+      "ID": "5"
+    },
+    {
+      "manufacturer": "ferrari",
+      "model": "",
+      "color": "black",
+      "body": "sedan",
+      "engine": "1,6L",
+      "maxSpeed": "250km/h",
+      "production": "2017",
+      "transmission": "automatic",
+      "poster": "ferrari.jpg",
+      "ID": "6"
+    },
+    {
+      "manufacturer": "mercedes",
+      "model": "e46",
+      "color": "red",
+      "body": "coupe",
+      "engine": "3L",
+      "maxSpeed": "250km/h",
+      "production": "2002",
+      "transmission": "automatic",
+      "poster": "mercedes.jpg",
+      "ID": "7"
+    },
+    {
+      "manufacturer": "infinity",
+      "model": "fd1",
+      "color": "green",
+      "body": "hatchback",
+      "engine": "1,7L",
+      "maxSpeed": "250km/h",
+      "production": "2005",
+      "transmission": "manual",
+      "poster": "infinity.jpg",
+      "ID": "8"
+    },
+    {
+      "manufacturer": "porche",
+      "model": "",
+      "color": "black",
+      "body": "sedan",
+      "engine": "1,6L",
+      "maxSpeed": "250km/h",
+      "production": "2017",
+      "transmission": "automatic",
+      "poster": "porche.jpg",
+      "ID": "9"
     }
   ]
 }

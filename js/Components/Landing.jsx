@@ -3,20 +3,23 @@ import Calendar from "./Calendar";
 import Header from "./Header";
 import Search from "./Search";
 import { Link } from "react-router-dom";
+import SearchButton from "./SearchButton";
 
-const Landing = () => (
+const Landing = props => (
   <div className="landing">
     <Header />
     <h1>Car rental</h1>
     <div>
-      Выберете город:
-      <select>
-        <option>Минск</option>
-        <option>Борисов</option>
-      </select>
+      <div>
+        Выберете город:
+        <select>
+          <option>Минск</option>
+          <option>Борисов</option>
+        </select>
+      </div>
       <Calendar />
       <button>
-        <Link to="/search">Поиск</Link>
+        <Link to="/search">ПОИСК</Link>
       </button>
     </div>
     {/* <input type="text" placeholder="Search" />  */}

@@ -20,7 +20,6 @@ const Calendar = () => {
         Дата получения: <input type="date" id="date1" min={currentDate} />
         Дата возврата: <input type="date" id="date2" min={currentDate} />
       </form>
-      <li>Текущая дата - {currentDate}</li>
     </div>
   );
 };
