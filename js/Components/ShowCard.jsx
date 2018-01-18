@@ -22,11 +22,7 @@ const Image = styled.img`
 
 const ShowCard = props => (
   <Wrapper>
-    <Link
-      onClick={props.handleSetDetailsPageChange}
-      value="123"
-      to={`details/${props.ID}`}
-    >
+    <Link onClick={props.handleSetDetailsPageChange} to={`details/${props.ID}`}>
       <Image
         alt={`${props.manufacturer}actual picture`}
         src={`../../public/img/${props.poster}`}
@@ -43,7 +39,7 @@ const mapStateToProps = state => ({ detailsPage: state.detailsPage });
 const mapDispatchToProps = dispatch => ({
   handleSetDetailsPageChange(event) {
     dispatch(setDetailsPage(event.target.to));
-    console.log(event.target.value);
+    console.log(props);
   }
 });
 
