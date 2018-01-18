@@ -8,21 +8,24 @@ import { Link } from "react-router-dom";
 
 import { withRouter } from "react-router-dom";
 
-const Search = () => {
-  //const date1 = document.getElementById("date1").value;
+const Search = props => {
+  // const date1 = document.getElementById("date1").value;
   //  const date2 = document.getElementById("date2").value;
-  //console.log(date1, date2);
+  // console.log(date1, date2);
   if (false) {
-    //!date1 || !date2
+    //! date1 || !date2
     return <Landing />;
-  } else {
-    return (
-      <div className="search">
-        <Header />
-        <div>{data.cars.map(cars => <ShowCard key={cars.ID} {...cars} />)}</div>
-      </div>
-    );
   }
+  return (
+    <div className="search">
+      <Header />
+      <div>
+        {data.cars.map(cars => (
+          <ShowCard id={props.detailsPage} key={cars.ID} {...cars} />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Search;

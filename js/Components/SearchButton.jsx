@@ -16,9 +16,6 @@ import { withRouter } from "react-router-dom";
 }
 */
 const SearchButton = withRouter(({ history }) => {
-  const date1 = document.getElementById("date1");
-  const date2 = document.getElementById("date2");
-
   if (date1) {
     return (
       <button

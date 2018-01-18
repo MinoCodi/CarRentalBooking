@@ -3,6 +3,8 @@ import { shape, string } from "prop-types";
 import Header from "./Header";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { setDetailsPage } from "../actionCreators";
 
 const Wrapper = styled.div`
   width: 32%;
@@ -20,7 +22,11 @@ const Image = styled.img`
 
 const ShowCard = props => (
   <Wrapper>
-    <Link to={`details/${props.ID}`}>
+    <Link
+      onClick={props.handleSetDetailsPageChange}
+      value="123"
+      to={`details/${props.ID}`}
+    >
       <Image
         alt={`${props.manufacturer}actual picture`}
         src={`../../public/img/${props.poster}`}
@@ -33,5 +39,12 @@ const ShowCard = props => (
     </div>
   </Wrapper>
 );
+const mapStateToProps = state => ({ detailsPage: state.detailsPage });
+const mapDispatchToProps = dispatch => ({
+  handleSetDetailsPageChange(event) {
+    dispatch(setDetailsPage(event.target.to));
+    console.log(event.target.value);
+  }
+});
 
-export default ShowCard;
+export default connect(mapStateToProps, mapDispatchToProps)(ShowCard);

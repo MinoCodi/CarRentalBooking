@@ -1,0 +1,1 @@
+export const SET_DETAILS_PAGE = "SET_DETAILS_PAGE";

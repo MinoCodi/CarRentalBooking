@@ -4,6 +4,7 @@ import Header from "./Header";
 import Search from "./Search";
 import { Link } from "react-router-dom";
 import SearchButton from "./SearchButton";
+import { connect } from "react-redux";
 
 const Landing = props => (
   <div className="landing">
@@ -26,4 +27,5 @@ const Landing = props => (
     {/* <a> Перейти к списку </a> */}
   </div>
 );
+
 export default Landing;
