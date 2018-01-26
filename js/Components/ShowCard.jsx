@@ -1,9 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
 import { shape, string } from "prop-types";
-import Header from "./Header";
+
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import history from "react-router-dom";
 import { setDetailsPage } from "../actionCreators";
 
 const Wrapper = styled.div`
@@ -20,26 +21,42 @@ const Image = styled.img`
   margin-right: 10px;
 `;
 
-const ShowCard = props => (
-  <Wrapper>
-    <Link onClick={props.handleSetDetailsPageChange} to={`details/${props.ID}`}>
-      <Image
-        alt={`${props.manufacturer}actual picture`}
-        src={`../../public/img/${props.poster}`}
-      />
-    </Link>
-    <div>
-      <h3>{props.manufacturer.toUpperCase()}</h3>
-      <h4>{props.model}</h4>
-      <p>{props.body}</p>
-    </div>
-  </Wrapper>
-);
+class ShowCard extends Component {
+  goToDetails = event => {
+    event.preventDefault();
+    this.props.history.push(this.props.detailsPage);
+  };
+  render() {
+    return (
+      <Wrapper>
+        <Image
+          alt={`${this.props.manufacturer}actual picture`}
+          src={`../../public/img/${this.props.poster}`}
+        />
+
+        <div>
+          <h3>{this.props.manufacturer.toUpperCase()}</h3>
+          <h4>{this.props.model}</h4>
+
+          <form onSubmit={this.goToDetails}>
+            <input
+              type="submit"
+              value={`Заказать`}
+              onClick={this.props.handleSetDetailsPageChange}
+              name={`/details/${this.props.ID}`}
+            />
+          </form>
+        </div>
+      </Wrapper>
+    );
+  }
+}
+
 const mapStateToProps = state => ({ detailsPage: state.detailsPage });
 const mapDispatchToProps = dispatch => ({
   handleSetDetailsPageChange(event) {
-    dispatch(setDetailsPage(event.target.to));
-    console.log(props);
+    dispatch(setDetailsPage(event.target.name));
+    // console.log(props);
   }
 });
 

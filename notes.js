@@ -18,3 +18,11 @@
 
 
 */
+
+// После wrapper в элементе showCard
+<input
+  type="button"
+  onClick={props.handleSetDetailsPageChange}
+  value={`/details/${props.ID}`}
+  href={props.detailsPage}
+/>;

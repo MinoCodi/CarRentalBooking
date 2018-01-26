@@ -2,6 +2,7 @@ import { SET_DETAILS_PAGE } from "./actions";
 
 const DEFAULT_STATE = {
   detailsPage: ""
+  // `details/${props.ID}`
 };
 
 const setDetailsPage = (state, action) =>

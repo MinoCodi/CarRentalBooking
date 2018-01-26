@@ -10,5 +10,6 @@
         "loose": true
       }
     ]
-  ]
+  ],
+  "plugins": ["transform-class-properties"]
 }

@@ -10,18 +10,26 @@ import { withRouter } from "react-router-dom";
 
 const Search = props => {
   // const date1 = document.getElementById("date1").value;
-  //  const date2 = document.getElementById("date2").value;
-  // console.log(date1, date2);
+  // const date2 = document.getElementById("date2").value;
+
+  //  console.log(date1, date2);
+  const history = props.history;
+  //! date1 || !date2 || date1 > date2
   if (false) {
-    //! date1 || !date2
-    return <Landing />;
+    props.history.push("/");
+    // return <Landing />;
   }
   return (
     <div className="search">
       <Header />
       <div>
         {data.cars.map(cars => (
-          <ShowCard id={props.detailsPage} key={cars.ID} {...cars} />
+          <ShowCard
+            history={history}
+            id={props.detailsPage}
+            key={cars.ID}
+            {...cars}
+          />
         ))}
       </div>
     </div>

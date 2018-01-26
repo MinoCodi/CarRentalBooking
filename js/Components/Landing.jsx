@@ -9,6 +9,7 @@ import { connect } from "react-redux";
 const Landing = props => (
   <div className="landing">
     <Header />
+
     <h1>Car rental</h1>
     <div>
       <div>

@@ -17,6 +17,7 @@ const App = () => (
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route path="/search" component={Search} />
+
           <Route
             path="/details/:id"
             component={props => {

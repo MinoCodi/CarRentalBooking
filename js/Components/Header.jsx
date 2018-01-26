@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { setDetailsPage } from "../actionCreators";
 
 const Header = props => {
   let utilSpace;
   if (props.details) {
     utilSpace = (
       <h2>
-        <Link to="/search">Назад</Link>
+        <Link onClick={props.handleSetDetailsPageChange} to="/search">
+          Назад
+        </Link>
       </h2>
     );
   }
@@ -20,4 +24,10 @@ const Header = props => {
   );
 };
 
-export default Header;
+const mapStateToProps = state => ({ detailsPage: state.detailsPage });
+const mapDispatchToProps = dispatch => ({
+  handleSetDetailsPageChange(event) {
+    dispatch(setDetailsPage(""));
+  }
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
