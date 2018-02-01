@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import styled from "styled-components";
+import Slider from "./Slider";
 
 const Details = props => {
   const {
@@ -13,6 +14,8 @@ const Details = props => {
     production,
     transmission,
     poster,
+    picsForSlider,
+    sliderPicsAmount,
     ID
   } = props.car;
 
@@ -30,11 +33,12 @@ const Details = props => {
       <Header details="true" />
       <section>
         <h1>{manufacturer}</h1>
-        <h2>{model}</h2>
         <img
           src={`../../public/img/${poster}`}
           alt={`Poster for ${manufacturer}`}
         />
+        <h2>{model}</h2>
+
         <h3>{`Color: ${color}`}</h3>
         <Wrapper>
           <li>{`Color: ${color}`}</li>
@@ -43,9 +47,9 @@ const Details = props => {
           <li>{`Max speed: ${maxSpeed}`}</li>
         </Wrapper>
       </section>
-      <Image
-        src={`../../public/img/${poster}`}
-        alt={`Poster for ${manufacturer}`}
+      <Slider
+        picsForSlider={picsForSlider}
+        sliderPicsAmount={sliderPicsAmount}
       />
     </div>
   );

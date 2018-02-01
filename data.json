@@ -1,7 +1,7 @@
 {
   "cars": [
     {
-      "manufacturer": "bmw",
+      "manufacturer": "BMW",
       "model": "e46",
       "color": "red",
       "body": "coupe",
@@ -10,10 +10,12 @@
       "production": "2002",
       "transmission": "automatic",
       "poster": "bmw.jpg",
+      "picsForSlider": "img320/bmw",
+      "sliderPicsAmount": "5",
       "ID": "1"
     },
     {
-      "manufacturer": "honda",
+      "manufacturer": "Honda",
       "model": "fd1",
       "color": "green",
       "body": "hatchback",
@@ -22,10 +24,11 @@
       "production": "2005",
       "transmission": "manual",
       "poster": "honda.jpg",
+      "picsForSlider": "img320/honda",
       "ID": "2"
     },
     {
-      "manufacturer": "skoda",
+      "manufacturer": "Skoda",
       "model": "",
       "color": "black",
       "body": "sedan",
@@ -34,10 +37,11 @@
       "production": "2017",
       "transmission": "automatic",
       "poster": "skoda.jpg",
+      "picsForSlider": "img320/skoda",
       "ID": "3"
     },
     {
-      "manufacturer": "opel",
+      "manufacturer": "Opel",
       "model": "e46",
       "color": "red",
       "body": "coupe",
@@ -46,10 +50,11 @@
       "production": "2002",
       "transmission": "automatic",
       "poster": "opel.jpg",
+      "picsForSlider": "img320/opel",
       "ID": "4"
     },
     {
-      "manufacturer": "volkswagen",
+      "manufacturer": "Volkswagen",
       "model": "fd1",
       "color": "green",
       "body": "hatchback",
@@ -58,10 +63,11 @@
       "production": "2005",
       "transmission": "manual",
       "poster": "vw.jpg",
+      "picsForSlider": "img320/volkswagen",
       "ID": "5"
     },
     {
-      "manufacturer": "ferrari",
+      "manufacturer": "Ferrari",
       "model": "",
       "color": "black",
       "body": "sedan",
@@ -70,10 +76,11 @@
       "production": "2017",
       "transmission": "automatic",
       "poster": "ferrari.jpg",
+      "picsForSlider": "img320/ferrari",
       "ID": "6"
     },
     {
-      "manufacturer": "mercedes",
+      "manufacturer": "Mercedes",
       "model": "e46",
       "color": "red",
       "body": "coupe",
@@ -82,10 +89,11 @@
       "production": "2002",
       "transmission": "automatic",
       "poster": "mercedes.jpg",
+      "picsForSlider": "img320/mercedes",
       "ID": "7"
     },
     {
-      "manufacturer": "infinity",
+      "manufacturer": "Infinity",
       "model": "fd1",
       "color": "green",
       "body": "hatchback",
@@ -94,18 +102,20 @@
       "production": "2005",
       "transmission": "manual",
       "poster": "infinity.jpg",
+      "picsForSlider": "img320/infinity",
       "ID": "8"
     },
     {
-      "manufacturer": "porche",
+      "manufacturer": "Porsche  911 Tagra 4",
       "model": "",
       "color": "black",
-      "body": "sedan",
+      "body": "coupe",
       "engine": "1,6L",
-      "maxSpeed": "250km/h",
+      "maxSpeed": "300km/h",
       "production": "2017",
       "transmission": "automatic",
-      "poster": "porche.jpg",
+      "poster": "porsche.jpg",
+      "picsForSlider": "img320/porsche",
       "ID": "9"
     }
   ]

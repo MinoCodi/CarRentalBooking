@@ -17,7 +17,9 @@ const Header = props => {
   return (
     <header>
       <h1>
-        <Link to="/">CarRental</Link>
+        <Link onClick={props.handleSetDetailsPageChange} to="/">
+          CarRental
+        </Link>
       </h1>
       {utilSpace}
     </header>

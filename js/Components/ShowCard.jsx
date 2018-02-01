@@ -35,8 +35,7 @@ class ShowCard extends Component {
         />
 
         <div>
-          <h3>{this.props.manufacturer.toUpperCase()}</h3>
-          <h4>{this.props.model}</h4>
+          <h3>{this.props.manufacturer}</h3>
 
           <form onSubmit={this.goToDetails}>
             <input
