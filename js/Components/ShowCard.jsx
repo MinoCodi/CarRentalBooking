@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { shape, string } from "prop-types";
-
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -33,10 +32,8 @@ class ShowCard extends Component {
           alt={`${this.props.manufacturer}actual picture`}
           src={`../../public/img/${this.props.poster}`}
         />
-
         <div>
           <h3>{this.props.manufacturer}</h3>
-
           <form onSubmit={this.goToDetails}>
             <input
               type="submit"
@@ -55,7 +52,6 @@ const mapStateToProps = state => ({ detailsPage: state.detailsPage });
 const mapDispatchToProps = dispatch => ({
   handleSetDetailsPageChange(event) {
     dispatch(setDetailsPage(event.target.name));
-    // console.log(props);
   }
 });
 

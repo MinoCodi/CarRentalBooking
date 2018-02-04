@@ -1,1 +1,2 @@
 export const SET_DETAILS_PAGE = "SET_DETAILS_PAGE";
+export const SET_CITY_SELECTOR = "SET_CITY_SELECTOR";

@@ -5,28 +5,52 @@ import Search from "./Search";
 import { Link } from "react-router-dom";
 import SearchButton from "./SearchButton";
 import { connect } from "react-redux";
+import { setCitySelector } from "../actionCreators";
 
-const Landing = props => (
-  <div className="landing">
-    <Header />
+class Landing extends React.Component {
+  onChange = () => {
+    const select = document.getElementById("selectId");
+    const value = select.options[select.selectedIndex].value;
+    //const text = select.options[select.selectedIndex].value;
+    //alert(`Текст: ${text}`);
+    //alert(this.props.citySelect);
+    return value;
+  };
 
-    <h1>Car rental</h1>
-    <div>
-      <div>
-        Выберете город:
-        <select>
-          <option>Минск</option>
-          <option>Борисов</option>
-        </select>
+  render() {
+    return (
+      <div className="landing">
+        <Header />
+        <h1>Car rental</h1>
+        <div>
+          <div>
+            Выберите город:
+            <select
+              id="selectId"
+              onChange={this.props.handleSetCitySelectorChange}
+              value={this.props.citySelector}
+            >
+              <option value="1">Минск</option>
+              <option value="2">Борисов</option>
+              <option value="3">Гродно</option>
+              <option value="4">Витебск</option>
+            </select>
+          </div>
+          <Calendar />
+          <button>
+            <Link to="/search">ПОИСК</Link>
+          </button>
+        </div>
       </div>
-      <Calendar />
-      <button>
-        <Link to="/search">ПОИСК</Link>
-      </button>
-    </div>
-    {/* <input type="text" placeholder="Search" />  */}
-    {/* <a> Перейти к списку </a> */}
-  </div>
-);
+    );
+  }
+}
 
-export default Landing;
+const mapStateToProps = state => ({ citySelector: state.citySelector });
+const mapDispatchToProps = dispatch => ({
+  handleSetCitySelectorChange(event) {
+    dispatch(setCitySelector(event.target.value));
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Landing);
