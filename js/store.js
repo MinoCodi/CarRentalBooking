@@ -1,8 +1,8 @@
 import { createStore, compose } from "redux";
-import rootReducer from "./reducers";
+import reducers from "./reducers";
 
 const store = createStore(
-  rootReducer,
+  reducers,
   compose(
     typeof window === "object" &&
     typeof window.devToolsExtension !== "undefined"

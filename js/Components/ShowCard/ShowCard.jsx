@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import history from "react-router-dom";
-import { setDetailsPage } from "../actionCreators";
+import { setDetailsPage } from "./actionCreator";
 
 const Wrapper = styled.div`
   width: 32%;

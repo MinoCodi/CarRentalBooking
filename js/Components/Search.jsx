@@ -1,7 +1,7 @@
 import React from "react";
 import data from "../../data.json";
-import ShowCard from "./ShowCard";
-import Landing from "./Landing";
+import ShowCard from "./ShowCard/ShowCard";
+import Landing from "./Landing/Landing";
 import Calendar from "./Calendar";
 import Header from "./Header";
 import { Link } from "react-router-dom";

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Landing from "./Components/Landing";
+import Landing from "./Components/Landing/Landing";
 import Search from "./Components/Search";
 import Details from "./Components/Details";
 import data from "../data.json";

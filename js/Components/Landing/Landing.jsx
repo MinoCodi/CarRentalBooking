@@ -1,11 +1,11 @@
 import React from "react";
-import Calendar from "./Calendar";
-import Header from "./Header";
-import Search from "./Search";
+import Calendar from "../Calendar";
+import Header from "../Header";
+import Search from "../Search";
 import { Link } from "react-router-dom";
-import SearchButton from "./SearchButton";
+import SearchButton from "../SearchButton";
 import { connect } from "react-redux";
-import { setCitySelector } from "../actionCreators";
+import { setCitySelector } from "./actionCreator";
 
 class Landing extends React.Component {
   onChange = () => {

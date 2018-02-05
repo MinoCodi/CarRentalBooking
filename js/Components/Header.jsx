@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { setDetailsPage } from "../actionCreators";
+import { setDetailsPage } from "./ShowCard/actionCreator";
 
 const Header = props => {
   let utilSpace;
