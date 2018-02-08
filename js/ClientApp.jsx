@@ -9,7 +9,6 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 const four0four = () => <h1>404</h1>;
-
 const App = () => (
   <BrowserRouter>
     <Provider store={store}>
