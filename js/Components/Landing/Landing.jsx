@@ -8,6 +8,13 @@ import { connect } from "react-redux";
 import { setCitySelector } from "./actionCreator";
 
 class Landing extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = { city: "Гродно" };
+  }
   onChange = () => {
     const select = document.getElementById("selectId");
     const value = select.options[select.selectedIndex].value;
@@ -16,6 +23,13 @@ class Landing extends React.Component {
     //alert(this.props.citySelect);
     return value;
   };
+  handleSubmit(event) {
+    alert(`you choose ${this.state.city}`);
+    event.preventDefault();
+  }
+  handleChange(event) {
+    this.setState({ city: event.target.value });
+  }
 
   render() {
     return (
@@ -30,16 +44,15 @@ class Landing extends React.Component {
               onChange={this.props.handleSetCitySelectorChange}
               value={this.props.citySelector}
             >
-              <option value="1">Минск</option>
-              <option value="2">Борисов</option>
-              <option value="3">Гродно</option>
-              <option value="4">Витебск</option>
+              <option value="Минск">Минск</option>
+              <option value="Борисов">Борисов</option>
+              <option value="Гродно">Гродно</option>
+              <option value="Витебск">Витебск</option>
             </select>
           </div>
           <Calendar />
-          <button>
-            <Link to="/search">ПОИСК</Link>
-          </button>
+
+          <Link to="/search">ПОИСК</Link>
         </div>
       </div>
     );

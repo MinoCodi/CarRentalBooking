@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import history from "react-router-dom";
 import { setDetailsPage } from "./actionCreator";
+import Details from "../Details";
+import data from "../../../data.json";
 
 const Wrapper = styled.div`
   width: 32%;
@@ -21,11 +23,15 @@ const Image = styled.img`
 `;
 
 class ShowCard extends Component {
-  goToDetails = event => {
-    event.preventDefault();
-    this.props.history.push(this.props.detailsPage);
-  };
+  constructor(props) {
+    super(props);
+  }
+
   render() {
+    if (this.props.detailsPage) {
+      const id = this.props.detailsPage;
+      return <Details car={data.cars[id - 1]} />;
+    }
     return (
       <Wrapper>
         <Image
@@ -34,14 +40,13 @@ class ShowCard extends Component {
         />
         <div>
           <h3>{this.props.manufacturer}</h3>
-          <form onSubmit={this.goToDetails}>
-            <input
-              type="submit"
-              value={`Заказать`}
-              onClick={this.props.handleSetDetailsPageChange}
-              name={`/details/${this.props.ID}`}
-            />
-          </form>
+
+          <input
+            type="submit"
+            value="Заказать"
+            onClick={this.props.handleSetDetailsPageChange}
+            name={`${this.props.ID}`}
+          />
         </div>
       </Wrapper>
     );

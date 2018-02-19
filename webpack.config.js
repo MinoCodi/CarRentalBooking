@@ -1,4 +1,11 @@
 const path = require("path");
+
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const extractPlugin = new ExtractTextPlugin({
+  filename: "main.css"
+});
+
 module.exports = {
   context: __dirname,
   entry: "./js/ClientApp.jsx",

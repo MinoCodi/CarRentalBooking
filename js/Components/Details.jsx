@@ -47,23 +47,9 @@ const Details = props => {
           <li>{`Max speed: ${maxSpeed}`}</li>
         </Wrapper>
       </section>
-      <Slider
-        picsForSlider={picsForSlider}
-        sliderPicsAmount={sliderPicsAmount}
-      />
+      <Slider picsForSlider={picsForSlider} />
     </div>
   );
 };
 
 export default Details;
-
-/*
-"manufacturer": "bmw",
-"model": "e46",
-"color": "red",
-"body": "coupe",
-"engine": "3L",
-"maxSpeed": "250km/h",
-"production": "2002",
-"transmission": "automatic",
-*/

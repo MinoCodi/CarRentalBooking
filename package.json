@@ -16,7 +16,9 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
-    "webpack": "^3.10.0",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "webpack": "^3.11.0",
     "webpack-dev-server": "^2.10.1"
   },
   "dependencies": {
@@ -31,6 +33,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.4.0",
     "eslint-plugin-react": "^7.5.1",
+    "extract-text-webpack-plugin": "^3.0.2",
     "flow": "^0.2.3",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",

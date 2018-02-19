@@ -1,7 +1,7 @@
 import { SET_CITY_SELECTOR } from "./actions";
 
 const DEFAULT_STATE = {
-  citySelector: "2"
+  citySelector: "Борисов"
 };
 
 const setCitySelector = (state, action) => {

@@ -1,20 +1,6 @@
 import React from "react";
 
-const imageSlider = props => {
-  const amount = props.sliderPicsAmount;
-  let compon;
-  /* for (let n = 1; n < amount; n++) {
-    compon = props => {
-return (
-
-);
-
-    }
-
-
-  }
-*/
-  return (
+const imageSlider = props => (
     <div className="slider">
       <input
         type="radio"
@@ -67,6 +53,5 @@ return (
       <img src={`../../public/img/${props.picsForSlider}/5.jpg`} />
     </div>
   );
-};
 
 export default imageSlider;
