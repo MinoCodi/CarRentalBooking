@@ -39,20 +39,23 @@ class Landing extends React.Component {
         <div>
           <div>
             Выберите город:
-            <select
-              id="selectId"
-              onChange={this.props.handleSetCitySelectorChange}
-              value={this.props.citySelector}
-            >
-              <option value="Минск">Минск</option>
-              <option value="Борисов">Борисов</option>
-              <option value="Гродно">Гродно</option>
-              <option value="Витебск">Витебск</option>
-            </select>
+            <form onSubmit={this.handleSubmit}>
+              <select
+                defaultValue={this.props.citySelector}
+                onChange={this.props.handleSetCitySelectorChange}
+              >
+                <option value="Минск">Минск</option>
+                <option value="Борисов">Борисов</option>
+                <option value="Гродно">Гродно</option>
+                <option value="Витебск">Витебск</option>
+              </select>
+              <input type="submit" value="Poisk" />
+            </form>
           </div>
           <Calendar />
-
-          <Link to="/search">ПОИСК</Link>
+          <button>
+            <Link to="/search">ПОИСК</Link>
+          </button>
         </div>
       </div>
     );

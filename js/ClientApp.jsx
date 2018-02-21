@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Landing from "./Components/Landing/Landing";
 import Search from "./Components/Search";
 import Details from "./Components/Details";
-import data from "../data.json";
 import { Provider } from "react-redux";
 import store from "./store";
 
@@ -16,7 +15,7 @@ const App = () => (
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route path="/search" component={Search} />
-
+          /*{" "}
           <Route
             path="/details/:id"
             component={props => {
@@ -25,7 +24,8 @@ const App = () => (
               );
               return <Details car={SelectedCar} {...props} />;
             }}
-          />
+          />{" "}
+          */
           <Route component={four0four} />
         </Switch>
       </div>

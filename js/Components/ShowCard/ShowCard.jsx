@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 import history from "react-router-dom";
 import { setDetailsPage } from "./actionCreator";
 import Details from "../Details";
-import data from "../../../data.json";
 
 const Wrapper = styled.div`
   width: 32%;
@@ -30,7 +29,7 @@ class ShowCard extends Component {
   render() {
     if (this.props.detailsPage) {
       const id = this.props.detailsPage;
-      return <Details car={data.cars[id - 1]} />;
+      return <Details car={this.props.data[id - 1]} />;
     }
     return (
       <Wrapper>
