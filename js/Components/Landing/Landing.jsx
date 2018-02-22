@@ -53,7 +53,7 @@ class Landing extends React.Component {
             </form>
           </div>
           <Calendar />
-          <button>
+          <button type="button" className="btn btn-primary">
             <Link to="/search">ПОИСК</Link>
           </button>
         </div>

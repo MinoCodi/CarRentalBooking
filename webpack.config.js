@@ -2,10 +2,6 @@ const path = require("path");
 
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-const extractPlugin = new ExtractTextPlugin({
-  filename: "main.css"
-});
-
 module.exports = {
   context: __dirname,
   entry: "./js/ClientApp.jsx",
@@ -35,7 +31,18 @@ module.exports = {
         test: /\.jsx?$/,
         loader: "babel-loader",
         exclude: path.resolve(__dirname, "node_modules")
+      },
+      {
+        test: /\.(scss)$/,
+        loader: ExtractTextPlugin.extract(["css-loader", "sass-loader"])
       }
     ]
-  }
+  },
+
+  plugins: [
+    // Specify output file name and path
+    new ExtractTextPlugin({
+      filename: "public/style2.css"
+    })
+  ]
 };

@@ -12,10 +12,9 @@ import { withRouter } from "react-router-dom";
 class Search extends React.Component {
   constructor(props) {
     super(props);
-    this.vehicle;
+    this.state = { cars: [] };
   }
 
-  // запускается перед отрисовкой компонента Search
   componentWillMount() {
     // const date1 = document.getElementById("date1").value;
     // const date2 = document.getElementById("date2").value;
@@ -24,32 +23,37 @@ class Search extends React.Component {
     fetch("http://localhost:3000/data.json")
       .then(resp => resp.json())
       .then(data1 => {
-        this.vehicle = data1.cars[0].manufacturer;
-
-        //  console.log(this.vehicle);
+        this.setState({ cars: JSON.stringify(data1.cars) });
+        // console.log(this.vehicle);
       });
-
-    console.log(this.vehicle);
+    // console.log(this.vehicle);
   }
-
-  componentDidMount() {
-    console.log(this.vehicle);
+  componentWillUpdate() {
+    console.log(this.state);
+  }
+  componentDidUpdate() {
+    console.log(this.state);
   }
 
   render() {
+    const { cars } = this.state;
     return (
       <div className="search">
         <Header />
-        <div>
-          {data.cars.map(cars => (
-            <ShowCard
-              id={this.props.detailsPage}
-              key={cars.ID}
-              data={data.cars}
-              {...cars}
-            />
-          ))}
-        </div>
+        {cars.length ? (
+          <div>
+            {data.cars.map(cars => (
+              <ShowCard
+                id={this.props.detailsPage}
+                key={cars.ID}
+                data={data.cars}
+                {...cars}
+              />
+            ))}{" "}
+          </div>
+        ) : (
+          <h1>Loading...</h1>
+        )}
       </div>
     );
   }
