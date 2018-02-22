@@ -5,7 +5,6 @@ import Calendar from "./Calendar";
 import Header from "./Header";
 import { Link } from "react-router-dom";
 import { browserHistory } from "react-router";
-import data from "../../api/data/data.json";
 
 import { withRouter } from "react-router-dom";
 
@@ -23,16 +22,10 @@ class Search extends React.Component {
     fetch("http://localhost:3000/data.json")
       .then(resp => resp.json())
       .then(data1 => {
-        this.setState({ cars: JSON.stringify(data1.cars) });
+        this.setState({ cars: data1.cars });
         // console.log(this.vehicle);
       });
     // console.log(this.vehicle);
-  }
-  componentWillUpdate() {
-    console.log(this.state);
-  }
-  componentDidUpdate() {
-    console.log(this.state);
   }
 
   render() {
@@ -41,16 +34,13 @@ class Search extends React.Component {
       <div className="search">
         <Header />
         {cars.length ? (
-          <div>
-            {data.cars.map(cars => (
-              <ShowCard
-                id={this.props.detailsPage}
-                key={cars.ID}
-                data={data.cars}
-                {...cars}
-              />
+          <React.Fragment>
+            {cars.map(car => (
+              <Link to={`/search/car/${car.ID}`} key={car.ID}>
+                <ShowCard key={car.ID} {...car} />
+              </Link>
             ))}{" "}
-          </div>
+          </React.Fragment>
         ) : (
           <h1>Loading...</h1>
         )}

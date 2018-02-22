@@ -3,6 +3,9 @@ const data = require("./data/data.json");
 
 const app = express();
 
+const specificData = number => data.cars[number - 1];
+
+console.log(specificData);
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -13,6 +16,11 @@ app.use((req, res, next) => {
 });
 
 app.get("/data.json", (req, res) => res.send(data));
+
+app.get("/car/:id", (req, res) => {
+  const snd = specificData(req.params.id);
+  res.send(snd);
+});
 
 app.post("/", (req, res, next) => {});
 

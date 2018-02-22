@@ -27,15 +27,15 @@ class ShowCard extends Component {
   }
 
   render() {
+    // console.log(this.props);
     if (this.props.detailsPage) {
-      const id = this.props.detailsPage;
-      return <Details car={this.props.data[id - 1]} />;
+      return <Details {...this.props} />;
     }
     return (
       <Wrapper>
         <Image
           alt={`${this.props.manufacturer}actual picture`}
-          src={`../../public/img/${this.props.poster}`}
+          src={`/public/img/${this.props.poster}`}
         />
         <div>
           <h3>{this.props.manufacturer}</h3>

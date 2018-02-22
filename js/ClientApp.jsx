@@ -14,7 +14,8 @@ const App = () => (
       <div className="app">
         <Switch>
           <Route exact path="/" component={Landing} />
-          <Route path="/search" component={Search} />
+          <Route exact path="/search" component={Search} />
+          <Route path="/search/car/:id" component={Details} />
           /*{" "}
           <Route
             path="/details/:id"
