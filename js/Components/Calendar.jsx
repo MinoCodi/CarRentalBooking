@@ -11,10 +11,10 @@ const monthNormilizer = () => {
     return (m += 1);
   }
 };
+
 const currentDate = `${now.getFullYear()}-${monthNormilizer()}-${now.getDate()}`;
 
-const Calendar = () => {
-  return (
+const Calendar = () => (
     <div>
       <form>
         Дата получения: <input type="date" id="date1" min={currentDate} />
@@ -22,6 +22,5 @@ const Calendar = () => {
       </form>
     </div>
   );
-};
 
 export default Calendar;

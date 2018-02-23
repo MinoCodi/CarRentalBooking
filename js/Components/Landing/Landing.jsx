@@ -7,6 +7,12 @@ import SearchButton from "../SearchButton";
 import { connect } from "react-redux";
 import { setCitySelector } from "./actionCreator";
 
+import { DatePicker } from "antd";
+import moment from "moment";
+const { MonthPicker, RangePicker } = DatePicker;
+
+import { Button } from "antd";
+
 class Landing extends React.Component {
   constructor(props) {
     super(props);
@@ -14,6 +20,7 @@ class Landing extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = { city: "Гродно" };
+    this.currentDate;
   }
   onChange = () => {
     const select = document.getElementById("selectId");
@@ -30,8 +37,25 @@ class Landing extends React.Component {
   handleChange(event) {
     this.setState({ city: event.target.value });
   }
+  componentWillMount() {
+    const now = new Date();
+    const monthNormilizer = () => {
+      let m = now.getMonth();
+      if (m < 9) {
+        const n = m + 1;
+        return (m = `0${n}`);
+      } else if (m >= 9) {
+        return (m += 1);
+      }
+    };
+    const currentDate = `${now.getDate()}/${monthNormilizer()}/${now.getFullYear()}`;
+
+    this.currentDate = currentDate;
+  }
 
   render() {
+    const dateFormat = "DD/MM/YYYY";
+
     return (
       <div className="landing">
         <Header />
@@ -49,13 +73,21 @@ class Landing extends React.Component {
                 <option value="Гродно">Гродно</option>
                 <option value="Витебск">Витебск</option>
               </select>
-              <input type="submit" value="Poisk" />
             </form>
           </div>
-          <Calendar />
-          <button>
+          <RangePicker
+            defaultValue={[
+              moment(this.currentDate, dateFormat),
+              moment(this.currentDate, dateFormat)
+            ]}
+            format={dateFormat}
+            disabledTime={(dates: moment, moment, partial: "start" | "end") =>
+              "12/02/2018" | "14/02/2018"
+            }
+          />
+          <Button type="primary">
             <Link to="/search">ПОИСК</Link>
-          </button>
+          </Button>
         </div>
       </div>
     );
