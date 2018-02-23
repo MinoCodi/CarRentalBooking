@@ -1,5 +1,5 @@
 import React from "react";
-import ShowCard from "./ShowCard/ShowCard";
+import ShowCard from "./ShowCard";
 import Landing from "./Landing/Landing";
 import Calendar from "./Calendar";
 import Header from "./Header";
@@ -36,7 +36,11 @@ class Search extends React.Component {
         {cars.length ? (
           <React.Fragment>
             {cars.map(car => (
-              <Link to={`/search/car/${car.ID}`} key={car.ID}>
+              <Link
+                to={`/search/car/${car.ID}`}
+                key={car.ID}
+                style={{ textDecoration: "none" }}
+              >
                 <ShowCard key={car.ID} {...car} />
               </Link>
             ))}{" "}

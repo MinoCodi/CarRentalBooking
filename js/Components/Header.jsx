@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { setDetailsPage } from "./ShowCard/actionCreator";
+import { setDetailsPage } from "./Details/actionCreator";
 
 const Header = props => {
   let utilSpace;
@@ -29,7 +29,7 @@ const Header = props => {
 const mapStateToProps = state => ({ detailsPage: state.detailsPage });
 const mapDispatchToProps = dispatch => ({
   handleSetDetailsPageChange(event) {
-    dispatch(setDetailsPage(""));
+    dispatch(setDetailsPage({}));
   }
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

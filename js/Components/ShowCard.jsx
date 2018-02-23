@@ -4,8 +4,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import history from "react-router-dom";
-import { setDetailsPage } from "./actionCreator";
-import Details from "../Details";
 
 const Wrapper = styled.div`
   width: 32%;
@@ -28,9 +26,9 @@ class ShowCard extends Component {
 
   render() {
     // console.log(this.props);
-    if (this.props.detailsPage) {
-      return <Details {...this.props} />;
-    }
+    // if (this.props.detailsPage) {
+    //  return <Details {...this.props} />;
+    //  }
     return (
       <Wrapper>
         <Image
@@ -40,12 +38,7 @@ class ShowCard extends Component {
         <div>
           <h3>{this.props.manufacturer}</h3>
 
-          <input
-            type="submit"
-            value="Заказать"
-            onClick={this.props.handleSetDetailsPageChange}
-            name={`${this.props.ID}`}
-          />
+          <input type="submit" value="Заказать" />
         </div>
       </Wrapper>
     );

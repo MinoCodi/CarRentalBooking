@@ -1,7 +1,7 @@
 import { SET_DETAILS_PAGE } from "./actions";
 
 const DEFAULT_STATE = {
-  detailsPage: ""
+  detailsPage: {}
 };
 
 const setDetailsPage = (state, action) =>

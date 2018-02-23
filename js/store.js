@@ -1,10 +1,10 @@
 import { createStore, compose } from "redux";
 import reducers from "./reducers";
-import ShowCardReducer from "./Components/ShowCard/ShowCardReducer";
+import DetailsPageReducer from "./Components/Details/DetailsPageReducer";
 import LandingReducer from "./Components/Landing/LandingReducer";
 
 const store = createStore(
-  ShowCardReducer,
+  DetailsPageReducer,
   compose(
     typeof window === "object" &&
     typeof window.devToolsExtension !== "undefined"

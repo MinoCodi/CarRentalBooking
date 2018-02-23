@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 import LandingReducer from "./Components/Landing/LandingReducer";
-import ShowCardReducer from "./Components/ShowCard/ShowCardReducer";
+import DetailsPageReducer from "./Components/Details/DetailsPageReducer";
 
 export default combineReducers({
   LandingReducer,
-  ShowCardReducer
+  DetailsPageReducer
 });
