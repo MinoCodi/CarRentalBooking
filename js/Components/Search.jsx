@@ -34,7 +34,7 @@ class Search extends React.Component {
       <React.Fragment>
         {cars.length ? (
           <div className="search">
-            <Header className="header" />
+            <Header />
             <div>{cars.map(car => <ShowCard key={car.ID} {...car} />)} </div>
           </div>
         ) : (
