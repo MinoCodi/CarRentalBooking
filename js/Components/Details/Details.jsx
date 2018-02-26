@@ -40,7 +40,7 @@ class Details extends React.Component {
       <React.Fragment>
         {Object.keys(detailsPage).length ? (
           <div className="details">
-            <Header details="true" />
+            <Header className="header" details="true" />
             <section>
               <h1>{detailsPage.manufacturer}</h1>
               <img

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import history from "react-router-dom";
+import { Button } from "antd";
 
 const Wrapper = styled.div`
   width: 32%;
@@ -37,8 +38,15 @@ class ShowCard extends Component {
         />
         <div>
           <h3>{this.props.manufacturer}</h3>
-
-          <input type="submit" value="Заказать" />
+          <Button>
+            <Link
+              to={`/search/car/${this.props.ID}`}
+              key={this.props.ID}
+              style={{ textDecoration: "none" }}
+            >
+              Заказать
+            </Link>
+          </Button>
         </div>
       </Wrapper>
     );

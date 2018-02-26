@@ -600,14 +600,17 @@ header {
   z-index: 10;
   position: fixed;
   display: flex;
+  flex-flow: row nowrap;
+
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   text-align: center;
   top: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
   background-color: #fafafa;
+
   padding: 8px 30px;
 }
 

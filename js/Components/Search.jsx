@@ -31,24 +31,16 @@ class Search extends React.Component {
   render() {
     const { cars } = this.state;
     return (
-      <div className="search">
-        <Header />
+      <React.Fragment>
         {cars.length ? (
-          <React.Fragment>
-            {cars.map(car => (
-              <Link
-                to={`/search/car/${car.ID}`}
-                key={car.ID}
-                style={{ textDecoration: "none" }}
-              >
-                <ShowCard key={car.ID} {...car} />
-              </Link>
-            ))}{" "}
-          </React.Fragment>
+          <div className="search">
+            <Header className="header" />
+            <div>{cars.map(car => <ShowCard key={car.ID} {...car} />)} </div>
+          </div>
         ) : (
           <h1>Loading...</h1>
         )}
-      </div>
+      </React.Fragment>
     );
   }
 }

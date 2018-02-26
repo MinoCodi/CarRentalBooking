@@ -19,6 +19,7 @@ class Landing extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.onChange = this.onChange.bind(this);
     this.state = { city: "Гродно" };
     this.currentDate;
   }
@@ -36,6 +37,10 @@ class Landing extends React.Component {
   }
   handleChange(event) {
     this.setState({ city: event.target.value });
+  }
+  onChange(value, dateString) {
+    console.log("Selected Time: ", value);
+    console.log("Formatted Selected Time: ", dateString);
   }
   componentWillMount() {
     const now = new Date();
@@ -81,9 +86,7 @@ class Landing extends React.Component {
               moment(this.currentDate, dateFormat)
             ]}
             format={dateFormat}
-            disabledTime={(dates: moment, moment, partial: "start" | "end") =>
-              "12/02/2018" | "14/02/2018"
-            }
+            onChange={this.onChange}
           />
           <Button type="primary">
             <Link to="/search">ПОИСК</Link>
