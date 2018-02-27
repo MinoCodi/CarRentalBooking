@@ -1,7 +1,7 @@
 import React from "react";
 import Calendar from "../Calendar";
 import Header from "../Header";
-import Search from "../Search";
+import Search from "../Search/Search";
 import { Link } from "react-router-dom";
 import SearchButton from "../SearchButton";
 import { connect } from "react-redux";
@@ -64,7 +64,7 @@ class Landing extends React.Component {
     return (
       <div className="landing">
         <Header />
-        <h1>Car rental</h1>
+        <h1>Car Finder</h1>
         <div>
           <div>
             Выберите город:

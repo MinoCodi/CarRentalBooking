@@ -18,7 +18,7 @@ const Header = props => {
     <header className="header">
       <h1>
         <Link onClick={props.handleSetDetailsPageChange} to="/">
-          CarRental
+          Car Finder
         </Link>
       </h1>
       {utilSpace}

@@ -1,17 +1,19 @@
 import React from "react";
-import ShowCard from "./ShowCard";
-import Landing from "./Landing/Landing";
-import Calendar from "./Calendar";
-import Header from "./Header";
+import ShowCard from "../ShowCard";
+import Landing from "../Landing/Landing";
+import Calendar from "../Calendar";
+import Header from "../Header";
 import { Link } from "react-router-dom";
 import { browserHistory } from "react-router";
+import { setSearchPage } from "./actionCreator";
+import { connect } from "react-redux";
 
 import { withRouter } from "react-router-dom";
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { cars: [] };
+    //  this.state = { cars: [] };
   }
 
   componentWillMount() {
@@ -22,20 +24,22 @@ class Search extends React.Component {
     fetch("http://localhost:3000/data.json")
       .then(resp => resp.json())
       .then(data1 => {
-        this.setState({ cars: data1.cars });
+        this.props.handleSetSearchPageChange(data1.cars);
         // console.log(this.vehicle);
       });
     // console.log(this.vehicle);
   }
 
   render() {
-    const { cars } = this.state;
+    const { searchPage } = this.props;
     return (
       <React.Fragment>
-        {cars.length ? (
+        {searchPage.length ? (
           <div className="search">
             <Header />
-            <div>{cars.map(car => <ShowCard key={car.ID} {...car} />)} </div>
+            <div>
+              {searchPage.map(car => <ShowCard key={car.ID} {...car} />)}{" "}
+            </div>
           </div>
         ) : (
           <h1>Loading...</h1>
@@ -44,5 +48,11 @@ class Search extends React.Component {
     );
   }
 }
+const mapStateToProps = state => ({ searchPage: state.searchPage });
+const mapDispatchToProps = dispatch => ({
+  handleSetSearchPageChange(event) {
+    dispatch(setSearchPage(event));
+  }
+});
 
-export default Search;
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

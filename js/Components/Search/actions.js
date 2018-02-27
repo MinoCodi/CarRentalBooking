@@ -1,0 +1,1 @@
+export const SET_SEARCH_PAGE = "SET_SEARCH_PAGE";
