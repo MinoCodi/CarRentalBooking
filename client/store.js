@@ -1,8 +1,8 @@
 import { createStore, compose } from "redux";
 import reducers from "./reducers";
-import DetailsPageReducer from "./Components/Details/DetailsPageReducer";
-import LandingReducer from "./Components/Landing/LandingReducer";
-import SearchPageReducer from "./Components/Search/SearchPageReducer";
+import DetailsPageReducer from "./components/details/reducer";
+import LandingReducer from "./components/landing/reducer";
+import SearchPageReducer from "./components/search/reducer";
 
 const store = createStore(
   SearchPageReducer,

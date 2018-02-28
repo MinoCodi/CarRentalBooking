@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Landing from "./Components/Landing/Landing";
-import Search from "./Components/Search/Search";
-import Details from "./Components/Details/Details";
+import Landing from "./components/landing/Landing";
+import Search from "./components/search/Search";
+import Details from "./components/details/Details";
 import { Provider } from "react-redux";
 import store from "./store";
 

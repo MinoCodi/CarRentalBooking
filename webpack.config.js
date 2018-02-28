@@ -1,10 +1,10 @@
 const path = require("path");
-
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   context: __dirname,
-  entry: "./js/ClientApp.jsx",
+  entry: "./client/App.jsx",
 
   devtool: "cheap-eval-source-map",
   output: {
@@ -13,12 +13,18 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".jsx", ".json"]
+    // ,
+    //  modules: ["node_modules", path.resolve(__dirname, "client"), "сomponents"]
   },
   devServer: {
     publicPath: "/public/",
     host: "localhost",
-    port: 8080,
-    historyApiFallback: true
+    port: 8000,
+    historyApiFallback: true,
+    hot: true,
+    proxy: {
+      "/api": "http://localhost:3000"
+    }
   },
   stats: {
     colors: true,
@@ -47,6 +53,8 @@ module.exports = {
     // Specify output file name and path
     new ExtractTextPlugin({
       filename: "public/style2.css"
-    })
+    }),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };
