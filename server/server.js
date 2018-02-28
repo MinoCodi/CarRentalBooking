@@ -5,17 +5,13 @@ const app = express();
 
 const specificData = number => data.cars[number - 1];
 
-console.log(specificData);
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
+  res.header("Access-Control-Allow-Headers");
   next();
 });
 
-app.get("/data.json", (req, res) => res.send(data));
+app.use(express.static("data"));
 
 app.get("/car/:id", (req, res) => {
   const snd = specificData(req.params.id);

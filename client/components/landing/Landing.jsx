@@ -1,7 +1,8 @@
 import React from "react";
 import Calendar from "../Calendar";
 import Header from "../Header";
-import Search from "../search/search";
+
+import Search from "../search/Search";
 import { Link } from "react-router-dom";
 import SearchButton from "../SearchButton";
 import { connect } from "react-redux";

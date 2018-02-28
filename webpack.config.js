@@ -12,9 +12,16 @@ module.exports = {
     filename: "bundle.js"
   },
   resolve: {
-    extensions: [".js", ".jsx", ".json"]
-    // ,
-    //  modules: ["node_modules", path.resolve(__dirname, "client"), "сomponents"]
+    extensions: [".js", ".jsx", ".json"],
+    modules: [
+      "node_modules",
+      path.resolve(__dirname, "./"),
+      "server",
+      path.resolve(__dirname, "./"),
+      "public",
+      path.resolve(__dirname, "client"),
+      "сomponents"
+    ]
   },
   devServer: {
     publicPath: "/public/",

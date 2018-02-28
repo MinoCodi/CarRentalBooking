@@ -1,11 +1,11 @@
 import { createStore, compose } from "redux";
 import reducers from "./reducers";
-import DetailsPageReducer from "./components/details/reducer";
-import LandingReducer from "./components/landing/reducer";
-import SearchPageReducer from "./components/search/reducer";
+import { detailsPageReducer } from "components/details";
+import { landingReducer } from "components/landing";
+import { searchPageReducer } from "components/search";
 
 const store = createStore(
-  SearchPageReducer,
+  detailsPageReducer,
   compose(
     typeof window === "object" &&
     typeof window.devToolsExtension !== "undefined"
