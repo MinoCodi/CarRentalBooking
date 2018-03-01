@@ -16,6 +16,7 @@
     [
       "import",
       { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }
-    ]
+    ],
+    ["transform-object-rest-spread"]
   ]
 }

@@ -15,3 +15,28 @@ export default (state = DEFAULT_STATE, action) => {
       return state;
   }
 };
+
+/*
+import { createActions, handleActions, combineActions } from "redux-actions";
+
+const defaultState = { cars: [] };
+
+const { setDetailsPage, removeDetailsPage } = createActions({
+  SET_DETAILS_PAGE: detailsPage => ({ detailsPage }),
+  REMOVE_DETAILS_PAGE: detailsPage => ({ detailsPage: [] })
+});
+
+const reducer = handleActions(
+  {
+    [combineActions(setDetailsPage, removeDetailsPage)](
+      state,
+      { payload: { detailsPage } }
+    ) {
+      return { state, cars: (state.cars = detailsPage) };
+    }
+  },
+  defaultState
+);
+
+export default reducer;
+*/
