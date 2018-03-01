@@ -30,7 +30,10 @@ module.exports = {
     historyApiFallback: true,
     hot: true,
     proxy: {
-      "/api": "http://localhost:3000"
+      "/data": {
+        target: "http://localhost:3000/data.json",
+        pathRewrite: { "^/data": "" }
+      }
     }
   },
   stats: {

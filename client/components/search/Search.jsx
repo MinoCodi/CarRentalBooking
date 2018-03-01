@@ -19,7 +19,7 @@ class Search extends React.Component {
     // const date2 = document.getElementById("date2").value;
     //! date1 || !date2 || date1 > date2
     // console.log(date1, date2);
-    fetch("http://localhost:3000/data.json")
+    fetch("/data")
       .then(resp => resp.json())
       .then(data1 => {
         this.setState({ cars: data1.cars });
