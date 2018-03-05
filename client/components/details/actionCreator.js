@@ -5,6 +5,7 @@ export function setDetailsPage(url) {
   return dispatch => {
     dispatch({ type: "FETCH_REQUEST" });
     return fetch(url)
+      .then(resp => resp.json())
       .then(resp => {
         dispatch({ type: SET_DETAILS_PAGE, payload: resp });
         console.log(resp);
