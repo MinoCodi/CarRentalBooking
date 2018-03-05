@@ -25,15 +25,15 @@ class Details extends React.Component {
   }
 
   componentWillMount() {
-    // console.log(this.props.match.params.id);
-    fetch(`http://localhost:3000/car/${this.props.match.params.id}`)
+    const url = `http://localhost:3000/car/${this.props.match.params.id}`;
+    this.props.loadDetailsPage(url);
+    console.log(this.props.match.params.id);
+    /*  fetch(`http://localhost:3000/car/${this.props.match.params.id}`)
       .then(resp => resp.json())
       .then(data => this.props.handleSetCitySelectorChange(data));
+  */
   }
 
-  componentDidUpdate() {
-    // console.log(this.state.specificCar);
-  }
   render() {
     const { detailsPage } = this.props;
     return (
@@ -68,8 +68,8 @@ class Details extends React.Component {
 
 const mapStateToProps = state => ({ detailsPage: state.detailsPage });
 const mapDispatchToProps = dispatch => ({
-  handleSetCitySelectorChange(value) {
-    dispatch(setDetailsPage(value));
+  loadDetailsPage() {
+    dispatch(setDetailsPage());
   }
 });
 
