@@ -1,15 +1,17 @@
-import { SET_DETAILS_PAGE } from "./actions";
-// import data from "../../../server/data/data.json";
+// import { SET_DETAILS_PAGE } from "./actions";
 
 export function setDetailsPage(url) {
   return dispatch => {
     dispatch({ type: "FETCH_REQUEST" });
-    return fetch(url)
-      .then(resp => resp.json())
-      .then(resp => {
-        dispatch({ type: SET_DETAILS_PAGE, payload: resp });
-        console.log(resp);
-      })
-      .catch(error => dispatch({ type: "FETCH_ERROR", error }));
+    if (url == "") {
+      dispatch({ type: "NO_URL" });
+    } else {
+      return fetch(url)
+        .then(resp => resp.json())
+        .then(data => {
+          dispatch({ type: "SET_DETAILS_PAGE", payload: data });
+        })
+        .catch(error => dispatch({ type: "FETCH_ERROR", payload: error }));
+    }
   };
 }

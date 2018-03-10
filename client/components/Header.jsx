@@ -5,10 +5,11 @@ import { setDetailsPage } from "./details/actionCreator";
 
 const Header = props => {
   let utilSpace;
+  const url = ``;
   if (props.details) {
     utilSpace = (
       <h2>
-        <Link onClick={props.handleSetDetailsPageChange} to="/search">
+        <Link onClick={props.loadDetailsPage} to="/search">
           Назад
         </Link>
       </h2>
@@ -17,7 +18,7 @@ const Header = props => {
   return (
     <header className="header">
       <h1>
-        <Link onClick={props.handleSetDetailsPageChange} to="/">
+        <Link onClick={props.loadDetailsPage} to="/">
           Car Finder
         </Link>
       </h1>
@@ -28,8 +29,8 @@ const Header = props => {
 
 const mapStateToProps = state => ({ detailsPage: state.detailsPage });
 const mapDispatchToProps = dispatch => ({
-  handleSetDetailsPageChange(event) {
-    dispatch(setDetailsPage({}));
+  loadDetailsPage() {
+    dispatch(setDetailsPage(""));
   }
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

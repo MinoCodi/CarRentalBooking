@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import ShowCard from "../ShowCard";
 import Landing from "../landing/Landing";
 
@@ -7,11 +8,12 @@ import { Link } from "react-router-dom";
 import { browserHistory } from "react-router";
 
 import { withRouter } from "react-router-dom";
+import { setSearchPage } from "./actionCreator";
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { cars: [] };
+    //  this.state = { cars: [] };
   }
 
   componentWillMount() {
@@ -19,17 +21,18 @@ class Search extends React.Component {
     // const date2 = document.getElementById("date2").value;
     //! date1 || !date2 || date1 > date2
     // console.log(date1, date2);
-    fetch("/data")
+    const url = "/data";
+    this.props.loadCars(url);
+
+    /*  fetch("/data")
       .then(resp => resp.json())
       .then(data1 => {
         this.setState({ cars: data1.cars });
-        // console.log(this.vehicle);
-      });
-    // console.log(this.vehicle);
+      }); */
   }
 
   render() {
-    const { cars } = this.state;
+    const { cars } = this.props.searchPage;
     return (
       <React.Fragment>
         {cars.length ? (
@@ -45,4 +48,11 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+const mapStateToProps = state => ({ searchPage: state.searchPage });
+const mapDispatchToProps = dispatch => ({
+  loadCars(url) {
+    dispatch(setSearchPage(url));
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
