@@ -5,7 +5,7 @@ import { landingReducer } from "components/landing";
 import { detailsPageReducer } from "components/details";
 import { searchPageReducer } from "components/search";
 
-// import rootReducer from "./reducers/index.js";
+// import rootReducer from "./reducers/index";
 
 const rootReducer = combineReducers({
   searchPage: searchPageReducer,
@@ -13,7 +13,7 @@ const rootReducer = combineReducers({
 });
 
 const store = createStore(
-  searchPageReducer,
+  rootReducer,
   compose(
     applyMiddleware(thunkMiddleware),
     typeof window === "object" &&
