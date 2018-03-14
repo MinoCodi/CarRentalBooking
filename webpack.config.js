@@ -24,7 +24,7 @@ module.exports = {
     ]
   },
   devServer: {
-    publicPath: "/public/",
+    publicPath: "/public/index.html",
     host: "localhost",
     port: 8000,
     historyApiFallback: true,
@@ -60,7 +60,6 @@ module.exports = {
   },
 
   plugins: [
-    // Specify output file name and path
     new ExtractTextPlugin({
       filename: "public/style2.css"
     }),

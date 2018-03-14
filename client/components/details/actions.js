@@ -1,2 +1,0 @@
-export const SET_DETAILS_PAGE = "SET_DETAILS_PAGE";
-export const FETCH_REQUEST = "FETCH_REQUEST";

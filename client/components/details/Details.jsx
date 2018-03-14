@@ -1,12 +1,11 @@
-import React from "react";
-import Header from "../Header";
+import React, { Component } from "react";
+import Header from "../header/Header";
 import styled from "styled-components";
-import Slider from "../Slider";
-import data from "server/data/data.json";
+import Slider from "../slider/Slider";
 import { setDetailsPage } from "./actionCreator";
 import { connect } from "react-redux";
 
-class Details extends React.Component {
+class Details extends Component {
   constructor(props) {
     super(props);
     this.Wrapper = styled.ul`
@@ -15,13 +14,11 @@ class Details extends React.Component {
     this.Wrapper = styled.ul`
       list-style-type: none;
     `;
-
     this.Image = styled.img`
       width: 46%;
       float: left;
       margin-right: 10px;
     `;
-    // this.state = { specificCar: {} };
   }
 
   componentWillMount() {

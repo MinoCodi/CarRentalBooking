@@ -1,5 +1,3 @@
-import { SET_CITY_SELECTOR } from "./actions";
-
 const DEFAULT_STATE = {
   citySelector: "Гродно"
 };

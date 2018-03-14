@@ -1,10 +1,10 @@
 import React from "react";
-import Calendar from "../Calendar";
-import Header from "../Header";
+import Calendar from "../calendar/Calendar";
+import Header from "../header/Header";
 
 import Search from "../search/Search";
 import { Link } from "react-router-dom";
-import SearchButton from "../SearchButton";
+import SearchButton from "../searchButton/SearchButton";
 import { connect } from "react-redux";
 import { setCitySelector } from "./actionCreator";
 
@@ -27,9 +27,6 @@ class Landing extends React.Component {
   onChange = () => {
     const select = document.getElementById("selectId");
     const value = select.options[select.selectedIndex].value;
-    //const text = select.options[select.selectedIndex].value;
-    //alert(`Текст: ${text}`);
-    //alert(this.props.citySelect);
     return value;
   };
   handleSubmit(event) {

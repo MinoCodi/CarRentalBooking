@@ -1,5 +1,3 @@
-import { SET_SEARCH_PAGE } from "./actions";
-
 export function setSearchPage(url) {
   return dispatch => {
     dispatch({ type: "FETCH_REQUEST" });

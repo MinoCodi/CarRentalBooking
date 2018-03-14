@@ -1,5 +1,3 @@
-// import { SET_DETAILS_PAGE } from "./actions";
-
 export function setDetailsPage(url) {
   return dispatch => {
     dispatch({ type: "FETCH_REQUEST" });

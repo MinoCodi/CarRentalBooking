@@ -12,7 +12,7 @@
       "poster": "bmw.jpg",
       "picsForSlider": "img320/bmw",
       "sliderPicsAmount": "5",
-      "ID": "1"
+      "ID": "0"
     },
     {
       "manufacturer": "Honda",
@@ -25,7 +25,7 @@
       "transmission": "manual",
       "poster": "honda.jpg",
       "picsForSlider": "img320/honda",
-      "ID": "2"
+      "ID": "1"
     },
     {
       "manufacturer": "Skoda",
@@ -38,7 +38,7 @@
       "transmission": "automatic",
       "poster": "skoda.jpg",
       "picsForSlider": "img320/skoda",
-      "ID": "3"
+      "ID": "2"
     },
     {
       "manufacturer": "Opel",
@@ -51,7 +51,7 @@
       "transmission": "automatic",
       "poster": "opel.jpg",
       "picsForSlider": "img320/opel",
-      "ID": "4"
+      "ID": "3"
     },
     {
       "manufacturer": "Volkswagen",
@@ -64,7 +64,7 @@
       "transmission": "manual",
       "poster": "vw.jpg",
       "picsForSlider": "img320/volkswagen",
-      "ID": "5"
+      "ID": "4"
     },
     {
       "manufacturer": "Ferrari",
@@ -77,7 +77,7 @@
       "transmission": "automatic",
       "poster": "ferrari.jpg",
       "picsForSlider": "img320/ferrari",
-      "ID": "6"
+      "ID": "5"
     },
     {
       "manufacturer": "Mercedes",
@@ -90,7 +90,7 @@
       "transmission": "automatic",
       "poster": "mercedes.jpg",
       "picsForSlider": "img320/mercedes",
-      "ID": "7"
+      "ID": "6"
     },
     {
       "manufacturer": "Infinity",
@@ -103,7 +103,7 @@
       "transmission": "manual",
       "poster": "infinity.jpg",
       "picsForSlider": "img320/infinity",
-      "ID": "8"
+      "ID": "7"
     },
     {
       "manufacturer": "Porsche  911 Tagra 4",
@@ -116,7 +116,7 @@
       "transmission": "automatic",
       "poster": "porsche.jpg",
       "picsForSlider": "img320/porsche",
-      "ID": "9"
+      "ID": "8"
     }
   ]
 }

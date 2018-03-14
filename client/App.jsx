@@ -16,17 +16,6 @@ const App = () => (
           <Route exact path="/" component={Landing} />
           <Route exact path="/search" component={Search} />
           <Route path="/search/car/:id" component={Details} />
-          /*{" "}
-          <Route
-            path="/details/:id"
-            component={props => {
-              const SelectedCar = data.cars.find(
-                car => props.match.params.id === car.ID
-              );
-              return <Details car={SelectedCar} {...props} />;
-            }}
-          />{" "}
-          */
           <Route component={four0four} />
         </Switch>
       </div>
