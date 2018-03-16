@@ -8,11 +8,20 @@ import SearchButton from "../searchButton/SearchButton";
 import { connect } from "react-redux";
 import { setCitySelector } from "./actionCreator";
 
-import { DatePicker } from "antd";
-import moment from "moment";
-const { MonthPicker, RangePicker } = DatePicker;
+// import { DatePicker } from "antd";
+// import moment from "moment";
+// const { MonthPicker, RangePicker } = DatePicker;
+//
+// import { Button } from "antd";
 
-import { Button } from "antd";
+// <RangePicker
+//   defaultValue={[
+//     moment(this.currentDate, dateFormat),
+//     moment(this.currentDate, dateFormat)
+//   ]}
+//   format={dateFormat}
+//   onChange={this.onChange}
+// />
 
 class Landing extends React.Component {
   constructor(props) {
@@ -78,17 +87,10 @@ class Landing extends React.Component {
               </select>
             </form>
           </div>
-          <RangePicker
-            defaultValue={[
-              moment(this.currentDate, dateFormat),
-              moment(this.currentDate, dateFormat)
-            ]}
-            format={dateFormat}
-            onChange={this.onChange}
-          />
-          <Button type="primary">
+
+          <button>
             <Link to="/search">ПОИСК</Link>
-          </Button>
+          </button>
         </div>
       </div>
     );

@@ -1,6 +1,7 @@
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const webpack = require("webpack");
+const combineLoaders = require("webpack-combine-loaders");
 
 module.exports = {
   context: __dirname,
@@ -12,7 +13,7 @@ module.exports = {
     filename: "bundle.js"
   },
   resolve: {
-    extensions: [".js", ".jsx", ".json"],
+    extensions: [".js", ".jsx", ".json", ".css"],
     modules: [
       "node_modules",
       path.resolve(__dirname, "./"),
@@ -52,9 +53,28 @@ module.exports = {
         test: /\.(scss)$/,
         loader: ExtractTextPlugin.extract(["css-loader", "sass-loader"])
       },
+      // {
+      //   test: /\.css$/,
+      //   use: ["style-loader", "css-loader"]
+      // },
+      // {
+      //   test: /\.css$/,
+      //   loader: "style-loader"
+      // },
+      // {
+      //   test: /\.css$/,
+      //   loader: "css-loader",
+      //   query: {
+      //     modules: true,
+      //     localIdentName: "[name]__[local]___[hash:base64:5]"
+      //   }
+      // }
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        loaders: [
+          "style-loader",
+          "css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]&sourceMap&-minimize"
+        ]
       }
     ]
   },

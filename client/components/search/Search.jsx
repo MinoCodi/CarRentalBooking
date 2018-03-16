@@ -7,14 +7,21 @@ import { Link } from "react-router-dom";
 
 import { setSearchPage } from "./actionCreator";
 
+import styles from "./style";
+
 class Search extends Component {
   constructor(props) {
     super(props);
+    this.rew = 0;
   }
 
   componentWillMount() {
     const url = "/data";
     this.props.loadCars(url);
+    console.log(this.rew);
+  }
+  componentDidMount() {
+    console.log("123123");
   }
 
   render() {
@@ -22,7 +29,7 @@ class Search extends Component {
     return (
       <React.Fragment>
         {cars.length ? (
-          <div className="search">
+          <div className={styles.search}>
             <Header />
             <div>{cars.map(car => <ShowCard key={car.ID} {...car} />)} </div>
           </div>
