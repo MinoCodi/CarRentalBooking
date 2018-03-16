@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Slider from "../slider/Slider";
 import { setDetailsPage } from "./actionCreator";
 import { connect } from "react-redux";
+import styles from "./style";
 
 class Details extends Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class Details extends Component {
     return (
       <React.Fragment>
         {Object.keys(detailsPage).length ? (
-          <div className="details">
+          <div className={styles.details}>
             <Header className="header" details="true" />
             <section>
               <h1>{detailsPage.manufacturer}</h1>

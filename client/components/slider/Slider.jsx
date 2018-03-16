@@ -1,7 +1,8 @@
 import React from "react";
+import styles from "./style";
 
 const imageSlider = props => (
-  <div className="slider">
+  <div className={styles.slider}>
     <input type="radio" name="slide_switch" id="id1" defaultChecked="checked" />
     <label htmlFor="id1">
       <img src={`../../public/img/${props.picsForSlider}/1.jpg`} width="100" />

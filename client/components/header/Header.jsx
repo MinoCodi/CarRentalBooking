@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { setDetailsPage } from "../details/actionCreator";
+import styles from "./style";
 
 const Header = props => {
   let utilSpace;
@@ -16,7 +17,7 @@ const Header = props => {
     );
   }
   return (
-    <header className="header">
+    <header className={styles.header}>
       <h1>
         <Link onClick={props.loadDetailsPage} to="/">
           Car Finder

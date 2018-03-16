@@ -18,10 +18,9 @@ class Search extends Component {
   componentWillMount() {
     const url = "/data";
     this.props.loadCars(url);
-    console.log(this.rew);
   }
   componentDidMount() {
-    console.log("123123");
+    console.log("13");
   }
 
   render() {

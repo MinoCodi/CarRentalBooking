@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import SearchButton from "../searchButton/SearchButton";
 import { connect } from "react-redux";
 import { setCitySelector } from "./actionCreator";
+import styles from "./style";
 
 // import { DatePicker } from "antd";
 // import moment from "moment";
@@ -66,10 +67,10 @@ class Landing extends React.Component {
   }
 
   render() {
-    const dateFormat = "DD/MM/YYYY";
+    //const dateFormat = "DD/MM/YYYY";
 
     return (
-      <div className="landing">
+      <div className={styles.landing}>
         <Header />
         <h1>Car Finder</h1>
         <div>
@@ -87,7 +88,6 @@ class Landing extends React.Component {
               </select>
             </form>
           </div>
-
           <button>
             <Link to="/search">ПОИСК</Link>
           </button>

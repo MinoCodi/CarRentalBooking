@@ -5,7 +5,7 @@ const combineLoaders = require("webpack-combine-loaders");
 
 module.exports = {
   context: __dirname,
-  entry: "./client/App.jsx",
+  entry: "./client/components/app/App.jsx",
 
   devtool: "cheap-eval-source-map",
   output: {
@@ -25,11 +25,12 @@ module.exports = {
     ]
   },
   devServer: {
-    publicPath: "/public/index.html",
+    publicPath: "/public/",
     host: "localhost",
     port: 8000,
     historyApiFallback: true,
     hot: true,
+    inline: true,
     proxy: {
       "/data": {
         target: "http://localhost:3000/data.json",
@@ -53,22 +54,6 @@ module.exports = {
         test: /\.(scss)$/,
         loader: ExtractTextPlugin.extract(["css-loader", "sass-loader"])
       },
-      // {
-      //   test: /\.css$/,
-      //   use: ["style-loader", "css-loader"]
-      // },
-      // {
-      //   test: /\.css$/,
-      //   loader: "style-loader"
-      // },
-      // {
-      //   test: /\.css$/,
-      //   loader: "css-loader",
-      //   query: {
-      //     modules: true,
-      //     localIdentName: "[name]__[local]___[hash:base64:5]"
-      //   }
-      // }
       {
         test: /\.css$/,
         loaders: [
@@ -80,9 +65,6 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin({
-      filename: "public/style2.css"
-    }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ]

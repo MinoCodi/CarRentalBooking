@@ -10,3 +10,23 @@
   border-radius: 5px;
   min-width: 1400px;
 }
+
+.search > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.search > div > a {
+  //   width: 100%;
+  //   padding-bottom: 70%;
+  //   height: 0;
+  //   overflow: inherit;
+  //   margin-bottom: inherit;;
+  //   border: none;
+  //   border-radius: inherit;
+}
+.search > header + div {
+  margin-top: 40px;
+}
