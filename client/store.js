@@ -2,7 +2,7 @@ import { createStore, compose, applyMiddleware, combineReducers } from "redux";
 import thunkMiddleware from "redux-thunk";
 
 import { landingReducer } from "components/landing";
-import { searchPageReducer } from "components/search";
+import { searchPageReducer } from "components/search/reducer";
 import { detailsPageReducer } from "components/details";
 
 const rootReducer = combineReducers({

@@ -5,7 +5,7 @@ import ShowCard from "../showCard/ShowCard";
 import Header from "../header/Header";
 import { Link } from "react-router-dom";
 
-import { setSearchPage } from "./actionCreator";
+import { setSearchPage } from "./reducer";
 
 import styles from "./style";
 
@@ -17,7 +17,8 @@ class Search extends Component {
 
   componentWillMount() {
     const url = "/data";
-    this.props.loadCars(url);
+    this.props.loadCars();
+    //store.dispatch(setSearchPage());
 
   }
   componentDidMount() {
@@ -43,8 +44,8 @@ class Search extends Component {
 
 const mapStateToProps = state => ({ searchPage: state.searchPage });
 const mapDispatchToProps = dispatch => ({
-  loadCars(url) {
-    dispatch(setSearchPage(url));
+  loadCars() {
+    dispatch(setSearchPage());
   }
 });
 
