@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "../header/Header";
 import styled from "styled-components";
 import Slider from "../slider/Slider";
-import { setDetailsPage } from "./actionCreator";
+import { setDetailsPage } from "./reducer";
 import { connect } from "react-redux";
 import styles from "./style";
 

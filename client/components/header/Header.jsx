@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { setDetailsPage } from "../details/actionCreator";
+import { setDetailsPage } from "../details/reducer";
 import styles from "./style";
 
 const Header = props => {
@@ -10,7 +10,7 @@ const Header = props => {
   if (props.details) {
     utilSpace = (
       <h2>
-        <Link onClick={props.loadDetailsPage} to="/search">
+        <Link  to="/search">
           Назад
         </Link>
       </h2>
@@ -19,7 +19,7 @@ const Header = props => {
   return (
     <header className={styles.header}>
       <h1>
-        <Link onClick={props.loadDetailsPage} to="/">
+        <Link  to="/">
           Car Finder
         </Link>
       </h1>
@@ -31,7 +31,7 @@ const Header = props => {
 const mapStateToProps = state => ({ detailsPage: state.detailsPage });
 const mapDispatchToProps = dispatch => ({
   loadDetailsPage() {
-    dispatch(setDetailsPage(""));
+    dispatch(setDetailsPage());
   }
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

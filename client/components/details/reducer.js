@@ -1,17 +1,13 @@
-/* import { SET_DETAILS_PAGE } from "./actions";
+import {createAction, handleAction, combineActions} from 'redux-actions';
 
- const DEFAULT_STATE = {
-  detailsPage: {}
-};
-*/
+const defaultState = {};
 
-export default (state = {}, action) => {
-  switch (action.type) {
-    case "SET_DETAILS_PAGE":
-      return Object.assign({}, state, action.payload);
-    case "NO_URL":
-      return Object.assign({}, state, {});
-    default:
-      return state;
-  }
-};
+export const setDetailsPage = createAction(
+  "SET_DETAILS_PAGE", (url) => (
+  fetch(url)
+.then(resp => resp.json())
+.then(car => ({detailsPage: car}) ) ));
+
+export const detailsPageReducer = handleAction(
+  setDetailsPage, {next(state, action) {return  action.payload.detailsPage}},defaultState )
+  

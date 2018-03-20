@@ -1,8 +1,10 @@
 import { createStore, compose, applyMiddleware, combineReducers } from "redux";
-import thunkMiddleware from "redux-thunk";
+//import thunkMiddleware from "redux-thunk";
+
+import promiseMiddleware from 'redux-promise';
 
 import { landingReducer } from "components/landing";
-import { searchPageReducer } from "components/search/reducer";
+import { searchPageReducer } from "components/search";
 import { detailsPageReducer } from "components/details";
 
 const rootReducer = combineReducers({
@@ -13,7 +15,7 @@ const rootReducer = combineReducers({
 const store = createStore(
   rootReducer,
   compose(
-    applyMiddleware(thunkMiddleware),
+    applyMiddleware(promiseMiddleware),
     typeof window === "object" &&
     typeof window.devToolsExtension !== "undefined"
       ? window.devToolsExtension()
