@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import history from "react-router-dom";
-// import { Button } from "antd";
 
 const Wrapper = styled.div`
   width: 32%;
@@ -26,28 +25,22 @@ class ShowCard extends Component {
   }
 
   render() {
-    // console.log(this.props);
-    // if (this.props.detailsPage) {
-    //  return <Details {...this.props} />;
-    //  }
     return (
       <Wrapper>
+      <Link
+        to={`/search/car/${this.props.ID}`}
+        key={this.props.ID}
+        style={{ textDecoration: "none" }}
+      >
         <Image
           alt={`${this.props.manufacturer}actual picture`}
-          src={`/public/img/${this.props.poster}`}
+          src={`/public/img/posters/${this.props.poster}`}
         />
         <div>
           <h3>{this.props.manufacturer}</h3>
-          <button>
-            <Link
-              to={`/search/car/${this.props.ID}`}
-              key={this.props.ID}
-              style={{ textDecoration: "none" }}
-            >
-              Заказать
-            </Link>
-          </button>
+          <button>Заказать</button>
         </div>
+        </Link>
       </Wrapper>
     );
   }

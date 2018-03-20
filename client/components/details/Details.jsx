@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import Header from "../header/Header";
 import styled from "styled-components";
 import Slider from "../slider/Slider";
-import { setDetailsPage } from "./reducer";
+import { setDetailsPage } from "./";
 import { connect } from "react-redux";
 import styles from "./style";
+import Spinner from "../spinner/Spinner";
 
 class Details extends Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class Details extends Component {
             <section>
               <h1>{detailsPage.manufacturer}</h1>
               <img
-                src={`/public/img/${detailsPage.poster}`}
+                src={`/public/img/posters/${detailsPage.poster}`}
                 alt={`Poster for ${detailsPage.manufacturer}`}
               />
               <h2>{detailsPage.model}</h2>
@@ -51,9 +52,7 @@ class Details extends Component {
             </section>
             <Slider picsForSlider={detailsPage.picsForSlider} />
           </div>
-        ) : (
-          <h1>Loading...</h1>
-        )}
+        ) : ( <Spinner />)}
       </React.Fragment>
     );
   }

@@ -117,6 +117,45 @@
       "poster": "porsche.jpg",
       "picsForSlider": "img320/porsche",
       "ID": "8"
+    },
+    {
+      "manufacturer": "Maybach",
+      "model": "",
+      "color": "black",
+      "body": "coupe",
+      "engine": "1,6L",
+      "maxSpeed": "300km/h",
+      "production": "2017",
+      "transmission": "automatic",
+      "poster": "maybach.jpg",
+      "picsForSlider": "img320/maybach",
+      "ID": "9"
+    },
+    {
+      "manufacturer": "Audi TT",
+      "model": "",
+      "color": "black",
+      "body": "coupe",
+      "engine": "1,6L",
+      "maxSpeed": "300km/h",
+      "production": "2017",
+      "transmission": "automatic",
+      "poster": "audi_tt.jpg",
+      "picsForSlider": "img320/audi_tt",
+      "ID": "10"
+    },
+    {
+      "manufacturer": "Вишневая девятка",
+      "model": "",
+      "color": "red",
+      "body": "hatchback",
+      "engine": "1,6L",
+      "maxSpeed": "300km/h",
+      "production": "CCCP",
+      "transmission": "mechanic",
+      "poster": "zhigul.jpg",
+      "picsForSlider": "img320/zhigul",
+      "ID": "11"
     }
   ]
 }

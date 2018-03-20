@@ -1,28 +1,22 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import ShowCard from "../showCard/ShowCard";
-
-import Header from "../header/Header";
 import { Link } from "react-router-dom";
 
-import { setSearchPage } from "./reducer";
+import { setSearchPage } from "./";
 
+import ShowCard from "../showCard/ShowCard";
+import Header from "../header/Header";
+import Spinner from "../spinner/Spinner";
 import styles from "./style";
 
 class Search extends Component {
   constructor(props) {
     super(props);
-    this.rew = 0;
   }
 
   componentWillMount() {
     const url = "/data";
-    this.props.loadCars();
-    //store.dispatch(setSearchPage());
-
-  }
-  componentDidMount() {
-    console.log("13");
+    this.props.loadCars(url);
   }
 
   render() {
@@ -34,9 +28,7 @@ class Search extends Component {
             <Header />
             <div>{cars.map(car => <ShowCard key={car.ID} {...car} />)} </div>
           </div>
-        ) : (
-          <h1>Loading...</h1>
-        )}
+        ) : ( <Spinner /> )}
       </React.Fragment>
     );
   }
@@ -44,8 +36,8 @@ class Search extends Component {
 
 const mapStateToProps = state => ({ searchPage: state.searchPage });
 const mapDispatchToProps = dispatch => ({
-  loadCars() {
-    dispatch(setSearchPage());
+  loadCars(url) {
+    dispatch(setSearchPage(url));
   }
 });
 

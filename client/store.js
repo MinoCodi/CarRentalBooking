@@ -1,5 +1,4 @@
 import { createStore, compose, applyMiddleware, combineReducers } from "redux";
-//import thunkMiddleware from "redux-thunk";
 
 import promiseMiddleware from 'redux-promise';
 
