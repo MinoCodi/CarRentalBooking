@@ -52,7 +52,7 @@ class Details extends Component {
             </section>
             <Slider picsForSlider={detailsPage.picsForSlider} />
           </div>
-        ) : ( <Spinner />)}
+        ) : ( <h1>Loading...</h1>)}
       </React.Fragment>
     );
   }

@@ -28,7 +28,7 @@ class Search extends Component {
             <Header />
             <div>{cars.map(car => <ShowCard key={car.ID} {...car} />)} </div>
           </div>
-        ) : ( <Spinner /> )}
+        ) : ( <h1>Loading...</h1> )}
       </React.Fragment>
     );
   }
