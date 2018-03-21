@@ -6,7 +6,7 @@ import { landingReducer } from "components/landing";
 import { searchPageReducer } from "components/search";
 import { detailsPageReducer } from "components/details";
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   searchPage: searchPageReducer,
   detailsPage: detailsPageReducer
 });

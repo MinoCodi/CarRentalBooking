@@ -1,15 +1,15 @@
-import {createActions, handleActions, combineActions} from 'redux-actions';
+import { createActions, handleActions, combineActions } from 'redux-actions';
 
 const defaultState = { cars: [] };
 
 export const {setSearchPage, removeSearchPage} = createActions({
   "SET_SEARCH_PAGE": (url) => (
-    fetch(url)
+    fetch("http://localhost:3000/data.json")
     .then(resp => resp.json())
     .then(data => ({ page: data.cars }) ) ),
 
-    "REMOVE_SEARCH_PAGE": () => ({page: [] })
-                                                              });
+    "REMOVE_SEARCH_PAGE": () => ({page: [] })})
+
 
 export const searchPageReducer = handleActions({
 
