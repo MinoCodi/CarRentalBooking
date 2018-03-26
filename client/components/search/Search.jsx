@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-
-import { setSearchPage } from "./";
-
+import { setSearchPage } from "/";
 import ShowCard from "../showCard/ShowCard";
 import Header from "../header/Header";
-import Spinner from "../spinner/Spinner";
 import styles from "./style";
+import createBrowserHistory from 'history/createBrowserHistory';
 
 class Search extends Component {
   constructor(props) {
