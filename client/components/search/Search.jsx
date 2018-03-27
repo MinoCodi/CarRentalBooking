@@ -4,12 +4,18 @@ import { setSearchPage } from "/";
 import ShowCard from "../showCard/ShowCard";
 import Header from "../header/Header";
 import styles from "./style";
-import createBrowserHistory from 'history/createBrowserHistory';
+import PropTypes from 'prop-types';
 
 class Search extends Component {
   constructor(props) {
     super(props);
   }
+
+  static propTypes = {
+    loadCars: PropTypes.func.isRequired,
+    searchPage: PropTypes.object.isRequired
+
+  };
 
   componentWillMount() {
     const url = "/data";
@@ -30,6 +36,8 @@ class Search extends Component {
     );
   }
 }
+
+
 
 const mapStateToProps = state => ({ searchPage: state.searchPage });
 const mapDispatchToProps = dispatch => ({

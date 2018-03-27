@@ -8,6 +8,7 @@ import SearchButton from "../searchButton/SearchButton";
 import { connect } from "react-redux";
 import { setCitySelector } from "./actionCreator";
 import styles from "./style";
+import PropTypes from 'prop-types';
 
 // import { DatePicker } from "antd";
 // import moment from "moment";
@@ -34,6 +35,13 @@ class Landing extends React.Component {
     this.state = { city: "Гродно" };
     this.currentDate;
   }
+
+  static propTypes = {
+    citySelector: PropTypes.string,
+    handleSetCitySelectorChange: PropTypes.func.isRequired
+
+  }
+
   onChange = () => {
     const select = document.getElementById("selectId");
     const value = select.options[select.selectedIndex].value;

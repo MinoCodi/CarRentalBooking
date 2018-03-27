@@ -6,10 +6,12 @@ import { setDetailsPage } from "./";
 import { connect } from "react-redux";
 import styles from "./style";
 import Spinner from "../spinner/Spinner";
+import PropTypes from 'prop-types';
 
 class Details extends Component {
   constructor(props) {
     super(props);
+
     this.Wrapper = styled.ul`
       list-style-type: none;
     `;
@@ -21,6 +23,12 @@ class Details extends Component {
       float: left;
       margin-right: 10px;
     `;
+  }
+
+  static propTypes = {
+    match: PropTypes.object.isRequired,
+    loadDetailsPage: PropTypes.func.isRequired,
+    detailsPage: PropTypes.object.isRequired
   }
 
   componentWillMount() {

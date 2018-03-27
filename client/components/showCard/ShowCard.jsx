@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import history from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const Wrapper = styled.div`
   width: 32%;
@@ -22,6 +23,13 @@ const Image = styled.img`
 class ShowCard extends Component {
   constructor(props) {
     super(props);
+  }
+
+  static propTypes = {
+    ID: PropTypes.string.isRequired,
+    poster: PropTypes.string.isRequired,
+    manufacturer: PropTypes.string.isRequired,
+    detailsPage: PropTypes.object.isRequired
   }
 
   render() {

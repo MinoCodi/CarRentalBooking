@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./style";
+import PropTypes from 'prop-types';
 
 const imageSlider = props => (
   <div className={styles.slider}>
@@ -34,5 +35,9 @@ const imageSlider = props => (
     <img src={`../../public/img/${props.picsForSlider}/5.jpg`} />
   </div>
 );
+
+imageSlider.propTypes = {
+  picsForSlider: PropTypes.string.isRequired
+}
 
 export default imageSlider;
