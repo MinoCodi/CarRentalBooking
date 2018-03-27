@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { removeDetailsPage } from "../details";
-import {removeSearchPage} from "../search";
+import { removeSearchPage } from "../search";
 import styles from "./style";
 import PropTypes from 'prop-types';
 

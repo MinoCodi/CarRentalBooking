@@ -5,6 +5,7 @@ import ShowCard from "../showCard/ShowCard";
 import Header from "../header/Header";
 import styles from "./style";
 import PropTypes from 'prop-types';
+import { removeDetailsPage } from "../details";
 
 class Search extends Component {
   constructor(props) {

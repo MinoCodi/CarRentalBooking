@@ -1,7 +1,6 @@
 import React from "react";
 import Calendar from "../calendar/Calendar";
 import Header from "../header/Header";
-
 import Search from "../search/Search";
 import { Link } from "react-router-dom";
 import SearchButton from "../searchButton/SearchButton";
@@ -9,6 +8,7 @@ import { connect } from "react-redux";
 import { setCitySelector } from "./actionCreator";
 import styles from "./style";
 import PropTypes from 'prop-types';
+
 
 // import { DatePicker } from "antd";
 // import moment from "moment";
