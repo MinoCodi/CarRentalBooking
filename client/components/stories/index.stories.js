@@ -1,2 +1,0 @@
-import "./Calendar";
-import "./Search";

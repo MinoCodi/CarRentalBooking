@@ -1,4 +1,4 @@
 export { default as Search } from "./Search";
-export { searchPageReducer as searchPageReducer } from "./reducer";
-export {setSearchPage as setSearchPage} from "./reducer";
-export {removeSearchPage as removeSearchPage} from "./reducer";
+export { searchPageReducer as searchPageReducer } from "./action";
+export { setSearchPage as setSearchPage } from "./action";
+export { removeSearchPage as removeSearchPage } from "./action";

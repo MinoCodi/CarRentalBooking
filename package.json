@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.prod.js --watch --progress",
     "dev": "webpack-dev-server --config webpack.config.dev.js --watch --progress --colors",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 9001",
     "build-storybook": "build-storybook"
   },
   "keywords": [],
