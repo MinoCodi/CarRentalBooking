@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import { shape, string } from "prop-types";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import history from "react-router-dom";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const Wrapper = styled.div`
   width: 32%;
@@ -21,44 +19,44 @@ const Image = styled.img`
 `;
 
 class ShowCard extends Component {
-  constructor(props) {
-    super(props);
-  }
+	constructor(props) {
+		super(props);
+	}
 
-  static propTypes = {
-    ID: PropTypes.string.isRequired,
-    poster: PropTypes.string.isRequired,
-    manufacturer: PropTypes.string.isRequired,
-    detailsPage: PropTypes.object.isRequired
-  }
-
-  render() {
-    return (
-      <Wrapper>
-      <Link
-        to={`/search/car/${this.props.ID}`}
-        key={this.props.ID}
-        style={{ textDecoration: "none" }}
-      >
-        <Image
-          alt={`${this.props.manufacturer}actual picture`}
-          src={`/public/img/posters/${this.props.poster}`}
-        />
-        <div>
-          <h3>{this.props.manufacturer}</h3>
-          <button>Заказать</button>
-        </div>
-        </Link>
-      </Wrapper>
-    );
-  }
+	render() {
+		return (
+			<Wrapper>
+				<Link
+					to={`/search/car/${this.props.ID}`}
+					key={this.props.ID}
+					style={{ textDecoration: "none" }}
+				>
+					<Image
+						alt={`${this.props.manufacturer}actual picture`}
+						src={`/public/img/posters/${this.props.poster}`}
+					/>
+					<div>
+						<h3>{this.props.manufacturer}</h3>
+						<button>Заказать</button>
+					</div>
+				</Link>
+			</Wrapper>
+		);
+	}
 }
+
+ShowCard.propTypes = {
+	ID: PropTypes.string.isRequired,
+	poster: PropTypes.string.isRequired,
+	manufacturer: PropTypes.string.isRequired,
+	detailsPage: PropTypes.object.isRequired
+};
 
 const mapStateToProps = state => ({ detailsPage: state.detailsPage });
 const mapDispatchToProps = dispatch => ({
-  handleSetDetailsPageChange(event) {
-    dispatch(setDetailsPage(event.target.name));
-  }
+	handleSetDetailsPageChange() {
+		dispatch();
+	}
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShowCard);

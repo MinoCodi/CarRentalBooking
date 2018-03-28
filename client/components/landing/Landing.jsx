@@ -36,11 +36,7 @@ class Landing extends React.Component {
     this.currentDate;
   }
 
-  static propTypes = {
-    citySelector: PropTypes.string,
-    handleSetCitySelectorChange: PropTypes.func.isRequired
 
-  }
 
   onChange = () => {
     const select = document.getElementById("selectId");
@@ -104,7 +100,11 @@ class Landing extends React.Component {
     );
   }
 }
+Landing.propTypes = {
+  citySelector: PropTypes.string,
+  handleSetCitySelectorChange: PropTypes.func.isRequired
 
+}
 const mapStateToProps = state => ({ citySelector: state.citySelector });
 const mapDispatchToProps = dispatch => ({
   handleSetCitySelectorChange(event) {

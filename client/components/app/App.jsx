@@ -10,18 +10,18 @@ import styles from "./style";
 
 const four0four = () => <h1>404</h1>;
 const App = () => (
-  <BrowserRouter>
-    <Provider store={store}>
-      <div className={styles.app}>
-        <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/search" component={Search} />
-          <Route path="/search/car/:id" component={Details} />
-          <Route component={four0four} />
-        </Switch>
-      </div>
-    </Provider>
-  </BrowserRouter>
+	<BrowserRouter>
+		<Provider store={store}>
+			<div className={styles.app}>
+				<Switch>
+					<Route exact path="/" component={Landing} />
+					<Route exact path="/search" component={Search} />
+					<Route path="/search/car/:id" component={Details} />
+					<Route component={four0four} />
+				</Switch>
+			</div>
+		</Provider>
+	</BrowserRouter>
 );
 
 ReactDOM.render(<App />, document.getElementById("root"));

@@ -9,7 +9,8 @@
         },
         "loose": true
       }
-    ]
+    ],
+    "stage-2"
   ],
   "plugins": [
     "transform-class-properties",

@@ -15,30 +15,31 @@ import { withRouter } from "react-router-dom";
   return(<Search />);
 }
 */
+
 const SearchButton = withRouter(({ history }) => {
-  if (date1) {
-    return (
-      <button
-        type="button"
-        onClick={() => {
-          history.push("/");
-        }}
-      >
+	if (date1) {
+		return (
+			<button
+				type="button"
+				onClick={() => {
+					history.push("/");
+				}}
+			>
         Поиск!
-        <h2>Введите даты</h2>
-      </button>
-    );
-  } else {
-    return (
-      <button
-        type="button"
-        onClick={() => {
-          history.push("/Search");
-        }}
-      >
+				<h2>Введите даты</h2>
+			</button>
+		);
+	} else {
+		return (
+			<button
+				type="button"
+				onClick={() => {
+					history.push("/Search");
+				}}
+			>
         123!
-      </button>
-    );
-  }
+			</button>
+		);
+	}
 });
 export default SearchButton;
