@@ -30,11 +30,11 @@ class Search extends Component {
 		);
 	}
 }
+
 Search.propTypes = {
 	loadCars: PropTypes.func.isRequired,
 	searchPage: PropTypes.object.isRequired
 };
-
 
 const mapStateToProps = state => ({ searchPage: state.searchPage });
 const mapDispatchToProps = dispatch => ({

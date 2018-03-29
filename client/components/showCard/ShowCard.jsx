@@ -33,7 +33,7 @@ class ShowCard extends Component {
 				>
 					<Image
 						alt={`${this.props.manufacturer}actual picture`}
-						src={`/public/img/posters/${this.props.poster}`}
+						src={`/img/posters/${this.props.poster}`}
 					/>
 					<div>
 						<h3>{this.props.manufacturer}</h3>

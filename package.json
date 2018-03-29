@@ -2,11 +2,11 @@
   "name": "CarRentalBookingApp",
   "version": "1.0.0",
   "description": "Car rental app",
-  "main": "index.js",
+
   "repository": "https://github.com/shepshukovich/CarRentalBooking",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.prod.js --watch --progress",
+    "build": "webpack --config webpack.config.dev.js --watch --progress",
     "dev": "webpack-dev-server --config webpack.config.dev.js --watch --progress --colors",
     "storybook": "start-storybook -p 9001",
     "build-storybook": "build-storybook"

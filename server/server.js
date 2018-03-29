@@ -17,5 +17,5 @@ app.get("/car/:id", (req, res) => {
 });
 
 app.listen(3000, () =>
-	console.log("Server is running. Listening on port 3000")
+	console.warn("Server is running. Listening on port 3000")
 );

@@ -38,7 +38,7 @@ class Details extends Component {
 						<section>
 							<h1>{detailsPage.manufacturer}</h1>
 							<img
-								src={`/public/img/posters/${detailsPage.poster}`}
+								src={`/img/posters/${detailsPage.poster}`}
 								alt={`Poster for ${detailsPage.manufacturer}`}
 							/>
 							<h2>{detailsPage.model}</h2>

@@ -2,11 +2,9 @@ const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const webpack = require("webpack");
 
-
 module.exports = {
 	context: __dirname,
 	entry: "./client/components/app/App.jsx",
-
 	devtool: "cheap-eval-source-map",
 	output: {
 		path: path.resolve(__dirname, "public"),
@@ -25,10 +23,10 @@ module.exports = {
 		]
 	},
 	devServer: {
-		publicPath: "/public/",
 		host: "localhost",
 		port: 8000,
-		historyApiFallback: true,
+		contentBase: "public",
+
 		hot: true,
 		inline: true,
 		proxy: {
