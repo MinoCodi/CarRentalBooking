@@ -12,8 +12,7 @@ class Search extends Component {
 	}
 
 	componentWillMount() {
-		const url = "/data";
-		this.props.loadCars(url);
+		this.props.loadCars(`http://localhost:3000/search/?city=${this.props.city.cityFilter}`);
 	}
 
 	render() {
@@ -33,10 +32,12 @@ class Search extends Component {
 
 Search.propTypes = {
 	loadCars: PropTypes.func.isRequired,
-	searchPage: PropTypes.object.isRequired
+	searchPage: PropTypes.object.isRequired,
+	city: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => ({ searchPage: state.searchPage });
+const mapStateToProps = state => ({ searchPage: state.searchPage, city: state.city });
+
 const mapDispatchToProps = dispatch => ({
 	loadCars(url) {
 		dispatch(setSearchPage(url));

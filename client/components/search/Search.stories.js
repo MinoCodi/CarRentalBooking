@@ -1,7 +1,8 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { createStore, applyMiddleware, combineReducers } from "redux";
-import { searchPageReducer } from "../search";
+import { Search } from "../search";
+import { searchPageReducer } from "../search/action";
 import createBrowserHistory from "history/createBrowserHistory";
 import promiseMiddleware from "redux-promise";
 import { routerReducer } from "react-router-redux";

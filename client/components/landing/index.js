@@ -1,2 +1,4 @@
 export { default as Landing } from "./Landing";
-export { default as landingReducer } from "./reducer";
+export { setCityFilter as setCityFilter } from "./action";
+export { removeCityFilter as removeCityFilter } from "./action";
+export { cityFilterReducer as cityFilterReducer } from "./action";

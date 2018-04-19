@@ -2,9 +2,9 @@ import React from "react";
 import Header from "../header/Header";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { setCitySelector } from "./actionCreator";
 import styles from "./style";
 import PropTypes from "prop-types";
+import {setCityFilter} from "/";
 
 // import { DatePicker } from "antd";
 // import moment from "moment";
@@ -74,20 +74,21 @@ class Landing extends React.Component {
 				<Header />
 				<h1>Car finder</h1>
 				<div>
+					{/* Выбор города ниже: */}
 					<div>
-            Выберите город:
-						<form onSubmit={this.handleSubmit}>
+						<div className={styles.text}>Выберите город:</div>
+						<form>
 							<select
-								defaultValue={this.props.citySelector}
-								onChange={this.props.handleSetCitySelectorChange}
-							>
-								<option value="Минск">Минск</option>
-								<option value="Борисов">Борисов</option>
-								<option value="Гродно">Гродно</option>
-								<option value="Витебск">Витебск</option>
+								onChange={this.props.handleSetCitySelectorChange}>
+								<option disabled> Выберите город: </option>
+								<option value="Minsk">Минск</option>
+								<option value="Borisov">Борисов</option>
+								<option value="Grodno">Гродно</option>
+								<option value="Vitebsk">Витебск</option>
 							</select>
 						</form>
 					</div>
+					{/* Выбор города выше */}
 					<button>
 						<Link to="/search">ПОИСК</Link>
 					</button>
@@ -97,14 +98,14 @@ class Landing extends React.Component {
 	}
 }
 Landing.propTypes = {
-	citySelector: PropTypes.string,
+	cityFilter: PropTypes.string,
 	handleSetCitySelectorChange: PropTypes.func.isRequired
 
 };
-const mapStateToProps = state => ({ citySelector: state.citySelector });
+const mapStateToProps = state => ({ cityFilter: state.cityFilter });
 const mapDispatchToProps = dispatch => ({
 	handleSetCitySelectorChange(event) {
-		dispatch(setCitySelector(event.target.value));
+		dispatch(setCityFilter(event.target.value));
 	}
 });
 

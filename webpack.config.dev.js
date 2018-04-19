@@ -34,7 +34,8 @@ module.exports = {
 				target: "http://localhost:3000/data.json",
 				pathRewrite: { "^/data": "" }
 			}
-		}
+		},
+		historyApiFallback: true,
 	},
 	stats: {
 		colors: true,
