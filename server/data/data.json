@@ -13,7 +13,8 @@
       "picsForSlider": "img320/bmw",
       "sliderPicsAmount": "5",
       "ID": "0",
-      "city": "Borisov"
+      "city": "Borisov",
+      "startDate": "2018-04-22"
     },
     {
       "manufacturer": "Honda",

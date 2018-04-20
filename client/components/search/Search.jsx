@@ -12,7 +12,7 @@ class Search extends Component {
 	}
 
 	componentWillMount() {
-		this.props.loadCars(`http://localhost:3000/search/?city=${this.props.city.cityFilter}`);
+		this.props.loadCars(`http://localhost:3000/search/?city=${this.props.city}&startDate=${this.props.startDate}&endDate=${this.props.endDate}`);
 	}
 
 	render() {
@@ -33,10 +33,16 @@ class Search extends Component {
 Search.propTypes = {
 	loadCars: PropTypes.func.isRequired,
 	searchPage: PropTypes.object.isRequired,
-	city: PropTypes.object.isRequired
+	city: PropTypes.string.isRequired,
+	startDate: PropTypes.string.isRequired,
+	endDate: PropTypes.string.isRequired
 };
 
-const mapStateToProps = state => ({ searchPage: state.searchPage, city: state.city });
+const mapStateToProps = state => ({ searchPage: state.searchPage,
+	city: state.filters.city,
+	startDate: state.filters.startDate,
+	endDate: state.filters.endDate
+});
 
 const mapDispatchToProps = dispatch => ({
 	loadCars(url) {

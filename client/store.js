@@ -2,14 +2,14 @@ import { createStore, compose, applyMiddleware, combineReducers } from "redux";
 
 import promiseMiddleware from "redux-promise";
 
-import { cityFilterReducer } from "components/landing";
+import { filterReducer } from "components/landing";
 import { searchPageReducer } from "components/search";
 import { detailsPageReducer } from "components/details";
 
 export const rootReducer = combineReducers({
 	searchPage: searchPageReducer,
 	detailsPage: detailsPageReducer,
-	city: cityFilterReducer
+	filters: filterReducer
 });
 
 const store = createStore(

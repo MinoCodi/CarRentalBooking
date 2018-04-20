@@ -2,6 +2,12 @@ const express = require("express");
 const data = require("./data/data.json");
 const bodyParser = require("body-parser");
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
+// const editJsonFile = require("edit-json-file");
+
+// let file = editJsonFile(`${__dirname}/data/data.json`);
+
+// file.set("cars[0].startDate", "");
+
 
 const app = express();
 
@@ -20,8 +26,9 @@ app.get("/car/:id", (req, res) => {
 
 app.get("/search", (req, res) => {
 	const newSearch = { cars: [] };
-	newSearch.cars = data.cars.filter( (car) => { return car.city == req.query.city; } );
+	newSearch.cars = data.cars.filter( (car) => { return (car.city == req.query.city && car.startDate == req.query.startDate); } );
 	res.send(newSearch);
+	console.warn(req.query);
 });
 
 app.post("/selectedCity", urlencodedParser, function (request, response) {

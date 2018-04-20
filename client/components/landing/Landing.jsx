@@ -4,22 +4,9 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import styles from "./style";
 import PropTypes from "prop-types";
-import {setCityFilter} from "/";
-
-// import { DatePicker } from "antd";
-// import moment from "moment";
-// const { MonthPicker, RangePicker } = DatePicker;
-//
-// import { Button } from "antd";
-
-// <RangePicker
-//   defaultValue={[
-//     moment(this.currentDate, dateFormat),
-//     moment(this.currentDate, dateFormat)
-//   ]}
-//   format={dateFormat}
-//   onChange={this.onChange}
-// />
+import { setCityFilter } from "/";
+import { setStartDate } from "/";
+import { setEndDate } from "/";
 
 class Landing extends React.Component {
 	constructor(props) {
@@ -46,10 +33,10 @@ class Landing extends React.Component {
 		this.setState({ city: event.target.value });
 	}
 
-	onChange2(value, dateString ) {
-		//console.log("Selected Time: ", value);
+	onChange2(value, dateString) {
 		console.warn("Formatted Selected Time: ", dateString);
 	}
+
 	componentWillMount() {
 		const now = new Date();
 		const monthNormilizer = () => {
@@ -61,26 +48,37 @@ class Landing extends React.Component {
 				return (m += 1);
 			}
 		};
-		const currentDate = `${now.getDate()}/${monthNormilizer()}/${now.getFullYear()}`;
+
+		const currentDate = `${now.getFullYear()}-${monthNormilizer()}-${now.getDate()}`;
 
 		this.currentDate = currentDate;
 	}
 
 	render() {
-		//const dateFormat = "DD/MM/YYYY";
-
 		return (
 			<div className={styles.landing}>
 				<Header />
 				<h1>Car finder</h1>
 				<div>
-					{/* Выбор города ниже: */}
+					{/* Выбор даты и города ниже: */}
 					<div>
-						<div className={styles.text}>Выберите город:</div>
+						<div className={styles.text}>Выберите дату:</div>
+						{/* Дата ниже: */}
+						<input type="date" id="startDate"
+							defaultValue={this.props.date1}
+							min={this.currentDate}
+							onChange={this.props.handleSetStartDate}></input>
+
+						<input type="date" id="endDate"
+							defaultValue={this.props.date1}
+							min={this.props.date2}
+							onChange={this.props.handleSetEndDate}></input>
+						{/* Дата выше: */}
 						<form>
 							<select
-								onChange={this.props.handleSetCitySelectorChange}>
-								<option disabled> Выберите город: </option>
+								onChange={this.props.handleSetCitySelectorChange}
+								defaultValue={this.props.city}>
+								<option hidden value="ChooseCity">Выберите город:</option>
 								<option value="Minsk">Минск</option>
 								<option value="Borisov">Борисов</option>
 								<option value="Grodno">Гродно</option>
@@ -88,7 +86,7 @@ class Landing extends React.Component {
 							</select>
 						</form>
 					</div>
-					{/* Выбор города выше */}
+					{/* Выбор даты и города выше */}
 					<button>
 						<Link to="/search">ПОИСК</Link>
 					</button>
@@ -97,15 +95,31 @@ class Landing extends React.Component {
 		);
 	}
 }
-Landing.propTypes = {
-	cityFilter: PropTypes.string,
-	handleSetCitySelectorChange: PropTypes.func.isRequired
 
+Landing.propTypes = {
+	city: PropTypes.string.isRequired,
+	handleSetCitySelectorChange: PropTypes.func.isRequired,
+	handleSetStartDate: PropTypes.func.isRequired,
+	handleSetEndDate: PropTypes.func.isRequired,
+	date1: PropTypes.string.isRequired,
+	date2: PropTypes.string.isRequired
 };
-const mapStateToProps = state => ({ cityFilter: state.cityFilter });
+
+const mapStateToProps = state => ({
+	city: state.filters.city,
+	date1: state.filters.startDate,
+	date2: state.filters.endDate
+});
+
 const mapDispatchToProps = dispatch => ({
 	handleSetCitySelectorChange(event) {
 		dispatch(setCityFilter(event.target.value));
+	},
+	handleSetStartDate(event) {
+		dispatch(setStartDate(event.target.value));
+	},
+	handleSetEndDate(event) {
+		dispatch(setEndDate(event.target.value));
 	}
 });
 
