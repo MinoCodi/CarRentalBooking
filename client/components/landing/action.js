@@ -14,7 +14,8 @@ const monthNormilizer = () => {
 const currentStartDate = `${now.getFullYear()}-${monthNormilizer()}-${now.getDate()}`;
 const currentEndDate = currentStartDate;
 
-const defaultState = {city: "ChooseCity", startDate: currentStartDate, endDate: currentEndDate};
+//default -> chooseCity
+const defaultState = {city: "Minsk", startDate: currentStartDate, endDate: currentEndDate};
 
 export const {setCityFilter, removeCityFilter, setStartDate, setEndDate} = createActions({
 	"SET_CITY_FILTER": (city) => ({ city: city }),

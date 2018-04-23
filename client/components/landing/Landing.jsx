@@ -77,10 +77,9 @@ class Landing extends React.Component {
 						<form>
 							<select
 								onChange={this.props.handleSetCitySelectorChange}
-								defaultValue={this.props.city}>
+								defaultValue={this.props.city} >
 								<option hidden value="ChooseCity">Выберите город:</option>
 								<option value="Minsk">Минск</option>
-								<option value="Borisov">Борисов</option>
 								<option value="Grodno">Гродно</option>
 								<option value="Vitebsk">Витебск</option>
 							</select>

@@ -51,7 +51,11 @@ class Details extends Component {
 							</this.Wrapper>
 						</section>
 						<Slider picsForSlider={detailsPage.picsForSlider} />
+
+						<input type="button" value="Заказать" size="large" />
+
 					</div>
+
 				) : ( <h1>Loading...</h1>)}
 			</React.Fragment>
 		);

@@ -26,7 +26,6 @@ module.exports = {
 		host: "localhost",
 		port: 8000,
 		contentBase: "public",
-
 		hot: true,
 		inline: true,
 		proxy: {
