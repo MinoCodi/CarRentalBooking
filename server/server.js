@@ -5,19 +5,94 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false });
 const fs = require("fs");
 
 const today = new Date();
-const monthNormilizer = () => {
-	let m = today.getMonth();
-	if (m < 9) {
-		const n = m + 1;
-		return (m = `0${n}`);
-	} else if (m >= 9) {
-		return (m += 1);
-	}
+
+const monthAndDateNormilizer = n => {
+	const monthNormilizer = (increment) => {
+		let m = today.getMonth();
+		if(increment) {
+			if(m == 11) {
+				m = 0;
+			}
+			else {
+				m++;
+			}
+		}
+		if (m < 9) {
+			const n = m + 1;
+			return (m =`0${n}`);
+		} else if (m >= 9) {
+			m += 1;
+			return (`${m}`);
+		}
+	};
+
+	const dayNormilizer = n => {
+		let d = today.getDate();
+		let f = d + n;
+
+		if(f > 28) {
+			let month = monthNormilizer();
+			if( month == "01" ||
+					month == "03" ||
+					month == "05" ||
+					month == "07" ||
+					month == "08" ||
+					month == "10" ||
+					month == "12") {
+				d = f - 31;
+
+				if(f == 29 || f == 30 || f == 31) {
+					d = f;
+					return (`${monthNormilizer()}-${d}`);
+				}
+
+				if(d < 10) {
+					d = `0${d}`;
+				}
+				return (`${monthNormilizer(true)}-${d}`);
+			}
+
+			if(	month == "04" ||
+					month == "06" ||
+					month == "09" ||
+					month == "11") {
+				d = f - 30;
+
+				if(f == 29 || f == 30) {
+					d = f;
+					return (`${monthNormilizer()}-${d}`);
+				}
+
+				if(d < 10) {
+					d = `0${d}`;
+				}
+				return (`${monthNormilizer(true)}-${d}`);
+			}
+
+			if(month == "02") {
+				d = f - 28;
+				if(d < 10) {
+					d = `0${d}`;
+				}
+				return (`${monthNormilizer(true)}-${d}`);
+			}
+		}
+
+		else if(f <= 28) {
+			if(f < 10) {
+				f = `0${f}`;
+			}
+			return (`${monthNormilizer()}-${f}`);
+		}
+	};
+
+	return dayNormilizer(n);
 };
 
-const currentDate = `${today.getFullYear()}-${monthNormilizer()}-${today.getDate()}`;
-const threeDaysAfterCurrentDate = `${today.getFullYear()}-${monthNormilizer()}-${today.getDate() + 3}`;
-const sevenDaysAfterCurrentDate = `${today.getFullYear()}-${monthNormilizer()}-${today.getDate() + 7}`;
+
+const currentDate = `${today.getFullYear()}-${monthAndDateNormilizer(0)}`;
+const threeDaysAfterCurrentDate = `${today.getFullYear()}-${monthAndDateNormilizer(3)}`;
+const sevenDaysAfterCurrentDate = `${today.getFullYear()}-${monthAndDateNormilizer(7)}`;
 
 //Availiable cars on app launch date
 data.cars[0].startDate = `${currentDate}`;
@@ -35,7 +110,7 @@ data.cars[15].startDate = `${threeDaysAfterCurrentDate}`;
 data.cars[16].startDate = `${threeDaysAfterCurrentDate}`;
 data.cars[17].startDate = `${threeDaysAfterCurrentDate}`;
 
-//Availiable cars a week after app launch date
+// //Availiable cars a week after app launch date
 data.cars[6].startDate = `${sevenDaysAfterCurrentDate}`;
 data.cars[7].startDate = `${sevenDaysAfterCurrentDate}`;
 data.cars[8].startDate = `${sevenDaysAfterCurrentDate}`;
