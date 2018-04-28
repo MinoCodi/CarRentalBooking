@@ -14,7 +14,7 @@
       "sliderPicsAmount": "5",
       "ID": "0",
       "city": "Minsk",
-      "startDate": "2018-04-28"
+      "startDate": "2018-04-29"
     },
     {
       "manufacturer": "Honda",
@@ -29,7 +29,7 @@
       "picsForSlider": "img320/honda",
       "ID": "1",
       "city": "Minsk",
-      "startDate": "2018-04-28"
+      "startDate": "2018-04-29"
     },
     {
       "manufacturer": "Skoda",
@@ -44,7 +44,7 @@
       "picsForSlider": "img320/skoda",
       "ID": "2",
       "city": "Minsk",
-      "startDate": "2018-04-28"
+      "startDate": "2018-04-29"
     },
     {
       "manufacturer": "Tesla Model S",
@@ -59,7 +59,7 @@
       "picsForSlider": "img320/tesla_model_s",
       "ID": "3",
       "city": "Minsk",
-      "startDate": "2018-04-28"
+      "startDate": "2018-04-29"
     },
     {
       "manufacturer": "Tesla Model 3",
@@ -74,7 +74,7 @@
       "picsForSlider": "img320/tesla_model_3",
       "ID": "4",
       "city": "Minsk",
-      "startDate": "2018-04-28"
+      "startDate": "2018-04-29"
     },
     {
       "manufacturer": "Tesla Model X",
@@ -89,7 +89,7 @@
       "picsForSlider": "img320/tesla_model_x",
       "ID": "5",
       "city": "Minsk",
-      "startDate": "2018-04-28"
+      "startDate": "2018-04-29"
     },
     {
       "manufacturer": "Opel",
@@ -104,7 +104,7 @@
       "picsForSlider": "img320/opel",
       "ID": "6",
       "city": "Vitebsk",
-      "startDate": "2018-05-05"
+      "startDate": "2018-05-06"
     },
     {
       "manufacturer": "Volkswagen",
@@ -119,7 +119,7 @@
       "picsForSlider": "img320/volkswagen",
       "ID": "7",
       "city": "Vitebsk",
-      "startDate": "2018-05-05"
+      "startDate": "2018-05-06"
     },
     {
       "manufacturer": "Ferrari",
@@ -134,7 +134,7 @@
       "picsForSlider": "img320/ferrari",
       "ID": "8",
       "city": "Vitebsk",
-      "startDate": "2018-05-05"
+      "startDate": "2018-05-06"
     },
     {
       "manufacturer": "Mercedes",
@@ -149,7 +149,7 @@
       "picsForSlider": "img320/mercedes",
       "ID": "9",
       "city": "Vitebsk",
-      "startDate": "2018-05-05"
+      "startDate": "2018-05-06"
     },
     {
       "manufacturer": "Infinity",
@@ -164,7 +164,7 @@
       "picsForSlider": "img320/infinity",
       "ID": "10",
       "city": "Vitebsk",
-      "startDate": "2018-05-05"
+      "startDate": "2018-05-06"
     },
     {
       "manufacturer": "Porsche  911 Tagra 4",
@@ -179,7 +179,7 @@
       "picsForSlider": "img320/porsche",
       "ID": "11",
       "city": "Vitebsk",
-      "startDate": "2018-05-05"
+      "startDate": "2018-05-06"
     },
     {
       "manufacturer": "Maybach",
@@ -194,7 +194,7 @@
       "picsForSlider": "img320/maybach",
       "ID": "12",
       "city": "Grodno",
-      "startDate": "2018-05-01"
+      "startDate": "2018-05-02"
     },
     {
       "manufacturer": "Audi TT",
@@ -209,7 +209,7 @@
       "picsForSlider": "img320/audi_tt",
       "ID": "13",
       "city": "Grodno",
-      "startDate": "2018-05-01"
+      "startDate": "2018-05-02"
     },
     {
       "manufacturer": "Вишневая девятка",
@@ -224,7 +224,7 @@
       "picsForSlider": "img320/zhigul",
       "ID": "14",
       "city": "Grodno",
-      "startDate": "2018-05-01"
+      "startDate": "2018-05-02"
     },
     {
       "manufacturer": "Mercedes S-Class Sedan",
@@ -239,7 +239,7 @@
       "picsForSlider": "img320/mercedes_s_class_2018",
       "ID": "15",
       "city": "Grodno",
-      "startDate": "2018-05-01"
+      "startDate": "2018-05-02"
     },
     {
       "manufacturer": "Mercedes-AMG S-Class Sedan",
@@ -254,7 +254,7 @@
       "picsForSlider": "img320/mercedes_amg_s_class_2018",
       "ID": "16",
       "city": "Grodno",
-      "startDate": "2018-05-01"
+      "startDate": "2018-05-02"
     },
     {
       "manufacturer": "C-Class Cabriolet",
@@ -269,7 +269,7 @@
       "picsForSlider": "img320/mercedes_C_Class _Cabriolet",
       "ID": "17",
       "city": "Grodno",
-      "startDate": "2018-05-01"
+      "startDate": "2018-05-02"
     }
   ]
 }
