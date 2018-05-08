@@ -11,34 +11,12 @@ import { setEndDate } from "/";
 class Landing extends React.Component {
 	constructor(props) {
 		super(props);
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
-		this.onChange = this.onChange.bind(this);
-		this.state = { city: "Гродно" };
 		this.currentDate;
-	}
-
-	onChange()  {
-		const select = document.getElementById("selectId");
-		const value = select.options[select.selectedIndex].value;
-		return value;
-	}
-
-	handleSubmit(event) {
-		alert(`you choose ${this.state.city}`);
-		event.preventDefault();
-	}
-
-	handleChange(event) {
-		this.setState({ city: event.target.value });
-	}
-
-	onChange2(value, dateString) {
-		console.warn("Formatted Selected Time: ", dateString);
 	}
 
 	componentWillMount() {
 		const now = new Date();
+		let d;
 		const monthNormilizer = () => {
 			let m = now.getMonth();
 			if (m < 9) {
@@ -48,8 +26,14 @@ class Landing extends React.Component {
 				return (m += 1);
 			}
 		};
+		if(now.getDate() < 10) {
+			d = `0${now.getDate()}`;
+		}
+		else if(now.getDate() >= 10) {
+			d = `${now.getdate()}`;
+		}
 
-		const currentDate = `${now.getFullYear()}-${monthNormilizer()}-${now.getDate()}`;
+		const currentDate = `${now.getFullYear()}-${monthNormilizer()}-${d}`;
 
 		this.currentDate = currentDate;
 	}
@@ -68,10 +52,8 @@ class Landing extends React.Component {
 							defaultValue={this.props.date1}
 							min={this.currentDate}
 							onChange={this.props.handleSetStartDate}></input>
-
 						<input type="date" id="endDate"
-							defaultValue={this.props.date1}
-							min={this.props.date2}
+							min={this.props.date1}
 							onChange={this.props.handleSetEndDate}></input>
 						{/* Дата выше: */}
 						<form>

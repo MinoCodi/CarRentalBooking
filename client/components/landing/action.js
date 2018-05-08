@@ -1,6 +1,7 @@
 import { createActions, handleActions } from "redux-actions";
 
 const now = new Date();
+let d;
 const monthNormilizer = () => {
 	let m = now.getMonth();
 	if (m < 9) {
@@ -10,8 +11,14 @@ const monthNormilizer = () => {
 		return (m += 1);
 	}
 };
+if(now.getDate() < 10) {
+	d = `0${now.getDate()}`;
+}
+else if(now.getDate() >= 10) {
+	d = `${now.getdate()}`;
+}
 
-const currentStartDate = `${now.getFullYear()}-${monthNormilizer()}-${now.getDate()}`;
+const currentStartDate = `${now.getFullYear()}-${monthNormilizer()}-${d}`;
 const currentEndDate = currentStartDate;
 
 //default -> chooseCity

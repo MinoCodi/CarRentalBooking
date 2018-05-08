@@ -6,7 +6,7 @@ import { setDetailsPage } from "./";
 import { connect } from "react-redux";
 import styles from "./style";
 import PropTypes from "prop-types";
-import { OrderForm } from "../orderForm";
+import { FormContainer } from "../orderForm";
 
 class Details extends Component {
 	constructor(props) {
@@ -52,7 +52,7 @@ class Details extends Component {
 							</this.Wrapper>
 						</section>
 						<Slider picsForSlider={detailsPage.picsForSlider} />
-						<OrderForm />
+						
 					</div>
 
 				) : ( <h1>Loading...</h1>)}
