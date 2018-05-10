@@ -15,7 +15,7 @@ if(now.getDate() < 10) {
 	d = `0${now.getDate()}`;
 }
 else if(now.getDate() >= 10) {
-	d = `${now.getdate()}`;
+	d = `${now.getDate()}`;
 }
 
 const currentStartDate = `${now.getFullYear()}-${monthNormilizer()}-${d}`;

@@ -1,8 +1,8 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { createStore, applyMiddleware, combineReducers } from "redux";
-import Details   from "./Details";
-import  setDetailsPage  from "./action";
+import Details from "./Details";
+import setDetailsPage  from "./action";
 import createBrowserHistory from "history/createBrowserHistory";
 import promiseMiddleware from "redux-promise";
 import { routerReducer } from "react-router-redux";

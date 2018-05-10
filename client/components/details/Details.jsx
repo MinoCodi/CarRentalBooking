@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Link from "react-router-dom";
 import Header from "../header/Header";
 import styled from "styled-components";
 import Slider from "../slider/Slider";
@@ -6,7 +7,7 @@ import { setDetailsPage } from "./";
 import { connect } from "react-redux";
 import styles from "./style";
 import PropTypes from "prop-types";
-import { FormContainer } from "../orderForm";
+
 
 class Details extends Component {
 	constructor(props) {
@@ -52,10 +53,15 @@ class Details extends Component {
 							</this.Wrapper>
 						</section>
 						<Slider picsForSlider={detailsPage.picsForSlider} />
-						
-					</div>
+						Имя:<input type='text' />
+						Фамилия:<input type='text' />
+						E-Mail:<input type='text' />
 
-				) : ( <h1>Loading...</h1>)}
+						<Link to="/search/order">ЗАКАЗАТЬ</Link>
+
+
+					</div>
+				) : ( <h1>Loading...</h1> )}
 			</React.Fragment>
 		);
 	}

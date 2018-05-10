@@ -30,7 +30,7 @@ class Landing extends React.Component {
 			d = `0${now.getDate()}`;
 		}
 		else if(now.getDate() >= 10) {
-			d = `${now.getdate()}`;
+			d = `${now.getDate()}`;
 		}
 
 		const currentDate = `${now.getFullYear()}-${monthNormilizer()}-${d}`;
