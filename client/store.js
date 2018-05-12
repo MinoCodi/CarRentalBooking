@@ -5,15 +5,13 @@ import promiseMiddleware from "redux-promise";
 import { filterReducer } from "components/landing";
 import { searchPageReducer } from "components/search";
 import { detailsPageReducer } from "components/details";
-import { reducer as formReducer } from "redux-form";
-import "tachyons";
-// import { orderFormReducer } from "components/orderForm";
+import { orderFormReducer } from "components/orderForm";
 
 export const rootReducer = combineReducers({
 	searchPage: searchPageReducer,
 	detailsPage: detailsPageReducer,
 	filters: filterReducer,
-	form: formReducer
+	orderForm: orderFormReducer
 });
 
 const store = createStore(

@@ -56,6 +56,7 @@
     "flow": "^0.2.3",
     "image-webpack-loader": "^4.2.0",
     "moment": "^2.22.1",
+    "nodemailer": "^4.6.4",
     "prop-types": "^15.6.1",
     "react-addons-shallow-compare": "^15.6.2",
     "react-dom": "^16.2.0",

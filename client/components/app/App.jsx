@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Landing } from "components/landing";
 import { Search } from "components/search";
 import { Details } from "components/details";
+import { OrderConfirmPage } from "components/orderConfirmPage";
 import { Provider } from "react-redux";
 import store from "../../store";
 import styles from "./style";
@@ -17,6 +18,7 @@ const App = () => (
 					<Route exact path="/" component={Landing} />
 					<Route exact path="/search" component={Search} />
 					<Route exact path="/search/car/:id" component={Details} />
+					<Route exact path="/order" component={OrderConfirmPage} />
 					<Route component={four0four} />
 				</Switch>
 			</div>
